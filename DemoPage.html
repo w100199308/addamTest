@@ -3,25 +3,26 @@
 
 <head>
     <meta charset="utf-8">
+    <script type="text/javascript" src="./echarts.js"></script>
+    <script type="text/javascript" src="./jquery-3.2.1.js"></script>
+    <script>
+        function changeSize() {
+            if (window.orientation === 90 || window.orientation === -90) {
+                $('#container').width(window.innerHeight);
+                $('#container').height(window.innerWidth);
+            } else {
+                $('#container').width(window.innerWidth);
+                $('#container').height(window.innerHeight);
+            }
+        }
+    </script>
 </head>
 
 <body style="height: 100%; margin: 0">
     <div id="container" style="height: 650px; width: 410px"></div>
-    <script type="text/javascript" src="./echarts.js"></script>
-    <script type="text/javascript" src="./jquery-3.2.1.js"></script>
     <script type="text/javascript">
-    function changeSize() {
-        if (window.orientation === 90 || window.orientation === -90) {
-            $('#container').width(window.innerHeight);
-            $('#container').height(window.innerWidth);
-        } else {
-            $('#container').width(window.innerWidth);
-            $('#container').height(window.innerHeight);
-        }
-    }
     changeSize();
-    //     $('#container').width(window.innerWidth);
-    // $('#container').height(window.innerHeight);
+
     var dom = document.getElementById("container");
     var myChart = echarts.init(dom);
     var app = {};
@@ -163,30 +164,7 @@
                 }
             ]
         },
-        media: [{
-                option: {
-                    title: {
-                        text: '市场活动1230有效性分析',
-                        textStyle: {
-                            fontSize: 20,
-                        }
-                    },
-                    legend: {
-                        right: 'center',
-                        bottom: 0,
-                        orient: 'horizontal'
-                    },
-                    series: [{
-                            radius: [20, '50%'],
-                            center: ['25%', '50%']
-                        },
-                        {
-                            radius: [30, '50%'],
-                            center: ['75%', '50%']
-                        }
-                    ]
-                }
-            },
+        media: [
             {
                 query: {
                     minAspectRatio: 1
@@ -216,46 +194,25 @@
             },
             {
                 query: {
+                    // maxWidth: 500,
                     maxAspectRatio: 1
-                },
-                option: {
-                    title: {
-                        text: '市场活动=500有效性分析',
-                        textStyle: {
-                            fontSize: 20,
-                        }
-                    },
-                    legend: {
-                        right: 'center',
-                        bottom: 0,
-                        orient: 'horizontal'
-                    },
-                    series: [{
-                            radius: [20, '50%'],
-                            center: ['50%', '30%']
-                        },
-                        {
-                            radius: [30, '50%'],
-                            center: ['50%', '70%']
-                        }
-                    ]
-                }
-            },
-            {
-                query: {
-                    maxWidth: 500
                 },
                 option: {
                     title: {
                         text: '市场活动<500有效性分析',
                         textStyle: {
-                            fontSize: 20,
+                            fontSize: 40,
                         }
                     },
                     legend: {
-                        right: 10,
-                        top: '5%',
-                        orient: 'horizontal'
+                        // right: 10,
+                        top: '70',
+                        orient: 'horizontal',
+                        itemWidth: 50,
+                        itemHeight: 28,
+                        textStyle: {
+                            fontSize: 25
+                        }
                     },
                     series: [{
                             radius: [20, '50%'],
@@ -275,11 +232,11 @@
 
     myChart.setOption(option);
 
-    // };;
     if (option && typeof option === "object") {
         myChart.setOption(option, true);
     }
     </script>
+
 </body>
 
 </html>
