@@ -8,6 +8,17 @@
        <script type="text/javascript" src="./echarts.js"></script>
        <script type="text/javascript" src="./jquery-3.2.1.js"></script>
        <script type="text/javascript">
+function changeSize() {
+    if (window.orientation === 180 || window.orientation === 0) {
+      $('#container').width(window.screen.width);
+      $('#container').height(window.screen.height);
+    }
+    if (window.orientation === 90 || window.orientation === -90 ){
+      $('#container').width(window.screen.height);
+      $('#container').height(window.screen.width);
+    }
+  }
+changeSize();
 var dom = document.getElementById("container");
 var myChart = echarts.init(dom);
 var app = {};
