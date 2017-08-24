@@ -19,6 +19,11 @@ function changeSize() {
     }
   }
 changeSize();
+          alert('window.screen.width='+window.screen.width);
+          alert('window.screen.height='+window.screen.height);
+          alert('window.orientation='+window.orientation);
+          $('#container').width(window.screen.width);
+      $('#container').height(window.screen.height);
 var dom = document.getElementById("container");
 var myChart = echarts.init(dom);
 var app = {};
