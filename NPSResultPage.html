@@ -3,9 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Fuentes de Google -->
+    <!-- <link href='http://fonts.useso.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+    <!-- Iconos -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width" />
     <script type="text/javascript" src="./echarts.js"></script>
-    <!-- // <script type="text/javascript" src="./jquery-3.2.1.js"></script> -->
+    <script type="text/javascript" src="./jquery-3.2.1.js"></script>
     <title>canvas仪表盘动画效果</title>
     <style type="text/css">
     html,
@@ -13,6 +18,11 @@
         width: 100%;
         height: 100%;
         margin: 0;
+        background: #E0EAF6;
+    }
+
+    h1 {
+        padding-left: 1rem;
     }
 
     canvas {
@@ -22,6 +32,7 @@
         margin: 0 auto;
         /*background: -webkit-linear-gradient(top, #0e83f5 0%, #21bdf6 100%);*/
     }
+
     </style>
     <script type="text/javascript">
     (function() {
@@ -40,7 +51,7 @@
     <h1 style="font-Size: 5rem">本月NPS</h1>
     <div style="height: 14rem">
         <div border="1" style="width: 40%; float: left">
-            <div align="center">
+            <div align="center" style="padding-top: 1rem">
                 <font style="font-Size: 15rem; color: rgb(111, 199, 45)">
                     50
                 </font>
@@ -55,10 +66,6 @@
             显示NPS得分变动
             <!-- <canvas ></canvas> -->
         </div>
-
-        <!-- NPS仪表盘插件 -->
-
-
         <!-- NPS3月走势图 -->
         <script type="text/javascript">
             var myChart = echarts.init(document.getElementById('npsReport'));
@@ -66,26 +73,24 @@
                 baseOption: {
                     grid: {
                         left: '15%',
+                        right: '10%',
                         top: '5%',
                         height: '70%'
                     },
-                    xAxis:  {
+                    xAxis: {
                         type: 'category',
-                        data: ['5月','6月','7月','8月']
+                        data: ['5月', '6月', '7月', '8月']
                     },
                     yAxis: {
                         type: 'value',
                         splitNumber: 1
                     },
-                    series: [
-                        {
-                            type:'line',
-                            data:[70, 60, 50, 90]
-                        }
-                    ]
+                    series: [{
+                        type: 'line',
+                        data: [70, 60, 50, 90]
+                    }]
                 },
-                media: [
-                    {
+                media: [{
                         option: {
 
                         }
@@ -119,14 +124,13 @@
             myChart.setOption(option);
         </script>
     </div>
-
-    <div style="float: none">
-        <h1 style="font-Size: 5rem">本月NPS2</h1>
-        <div border="1" style="width: 40%; float: left">
+    <div style="float: none; border: 5px">
+        <h1 style="font-Size: 5rem">本月回复率</h1>
+        <div border="1" style="width: 40%; ">
             <div>
                 <canvas id="canvas"></canvas>
             </div>
-            <div style="width: 100%; margin: 0 auto; text-align:center; padding-top: 0.5rem">
+            <div style="width: 100%; margin: 0 auto; text-align:center;">
                 <font id="NPSchange" style="font-Size: 4rem">
                     <!-- ↑↓上升50 -->
                 </font>
@@ -147,17 +151,18 @@
                 var html = document.documentElement;
                 var canvas = document.getElementById('canvas');
                 canvas.width = html.clientWidth / 3;
-                canvas.height = html.clientWidth / 5;
+                canvas.height = html.clientWidth / 3;
 
                 var ctx = canvas.getContext('2d'),
                     cWidth = canvas.width,
                     cHeight = canvas.height,
-                    score = 50, //要显示的值
+                    score = 85, //要显示的值
                     mum = 1, //数字步长
 
-                    radius = html.clientWidth / 7, //圆的半径、图的大小
+                    radius = html.clientWidth / 8, //圆的半径、图的大小
 
                     deg0 = Math.PI / 18; //每一格10度
+
                 var maxValue = 100; //最大值
                 var minValue = 0; //最小值
 
@@ -166,7 +171,7 @@
                  数字最大100，对应的度数是11*PI/9,那每个步长mum对应的度数如下：
                  */
 
-                var deg1 = mum * Math.PI / maxValue; // 每mum对应的度数
+                var deg1 = mum * 2 * Math.PI / maxValue; // 每mum对应的度数
                 var baValue = 0.6; //差评分割线
                 var haoValue = 0.8; //好评分割线
 
@@ -181,7 +186,7 @@
                     }
                     ctx.save();
                     ctx.clearRect(0, 0, cWidth, cHeight);
-                    ctx.translate(cWidth / 2, cHeight);
+                    ctx.translate(cWidth / 2, cHeight / 2);
                     ctx.rotate(18 * deg0); //180度
 
                     var aim = score * deg1 / mum; //数字对应的弧度数,先确定要走几次,除以mum,然后计算对应的弧度数
@@ -205,26 +210,26 @@
                     // ctx.restore();
 
                     //
-                    text(credit);
+                    text(credit, cWidth, cHeight);
                     ctx.save();
                     ctx.restore();
 
                     ctx.beginPath();
                     ctx.strokeStyle = 'rgba(236, 30, 38, .1)';
                     ctx.lineWidth = 7;
-                    ctx.arc(0, 0, radius, 0 * deg0, baValue * 18 * deg0, false); //设置外圆环220度
+                    ctx.arc(0, 0, radius, 0 * deg0, baValue * 36 * deg0, false); //设置外圆环220度
                     ctx.stroke();
 
                     ctx.beginPath();
                     ctx.strokeStyle = 'rgba(91, 171, 226, .1)';
                     ctx.lineWidth = 7;
-                    ctx.arc(0, 0, radius, baValue * 18 * deg0, haoValue * 18 * deg0, false); //设置外圆环220度
+                    ctx.arc(0, 0, radius, baValue * 36 * deg0, haoValue * 36 * deg0, false); //设置外圆环220度
                     ctx.stroke();
 
                     ctx.beginPath();
                     ctx.strokeStyle = 'rgba(111, 199, 45, .1)';
                     ctx.lineWidth = 7;
-                    ctx.arc(0, 0, radius, haoValue * 18 * deg0, 18 * deg0, false); //设置外圆环220度
+                    ctx.arc(0, 0, radius, haoValue * 36 * deg0, 36 * deg0, false); //设置外圆环220度
                     ctx.stroke();
                     // ctx.restore();
 
@@ -252,7 +257,7 @@
 
                 }
 
-                function text(process) {
+                function text(process, cWidth, cHeight) {
                     ctx.save();
                     ctx.rotate(18 * deg0); //200度
                     var NPSchangetest = document.getElementById('NPSchange');
@@ -268,10 +273,10 @@
                         ctx.fillStyle = 'rgba(91, 171, 226, 1)';
                     }
 
-                    ctx.font = '10rem Microsoft yahei';
+                    ctx.font = '9rem Microsoft yahei';
                     ctx.textAlign = 'center';
                     ctx.textBaseLine = 'top';
-                    ctx.fillText(process, 0, -5);
+                    ctx.fillText(process + '%', 0, cWidth / 8);
                     ctx.restore();
                 }
 
@@ -284,8 +289,9 @@
         </script>
     </div>
 
+    <div style="float: none">
 
-
+    </div>
 </body>
 
 </html>
