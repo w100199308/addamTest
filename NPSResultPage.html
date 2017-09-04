@@ -4,12 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Fuentes de Google -->
-    <!-- <link href='http://fonts.useso.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
-    <!-- Iconos -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width" />
-    <script type="text/javascript" src="./echarts.js"></script>
+    <script type="text/javascript" src="./echarts.min.js"></script>
     <script type="text/javascript" src="./jquery-3.2.1.js"></script>
     <title>canvas仪表盘动画效果</title>
     <style type="text/css">
@@ -85,7 +82,7 @@
         <table class="panel" style="margin: 0 auto; width: 95%; margin-top: 5px;">
             <tr>
                 <td colspan="2" style="text-align:center; border:1px solid #ECECEC;">
-                    <h1 style="font-Size: 5rem">历史NPS得分变更回复率</h1>
+                    <h1 style="font-Size: 5rem">近三月NPS得分与回复率</h1>
                     <div id="npsReport" style="margin:0 auto; height: 150px; width: 100%; ">
                     </div>
                 </td>
@@ -265,7 +262,8 @@
                 },
                 yAxis: {
                     type: 'value',
-                    splitNumber: 1
+                    splitNumber: 1,
+                    value: 'NPS得分, '
                 },
                 series: [{
                     type: 'line',
