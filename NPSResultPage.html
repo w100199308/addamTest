@@ -52,18 +52,18 @@
 </head>
 
 <body>
-    <div style="">
+    <div>
         <table class="panel" style="margin: 0 auto; width: 95%;">
             <tr style="margin:0 auto;">
                 <td style="width: 50%; border:1px solid #ECECEC;">
-                    <h1 style="font-Size: 5rem">本月NPS</h1>
+                    <h1 style="font-Size: 5rem">本月NPS得分</h1>
                     <div align="center" style="padding-top: 1rem">
                         <font style="font-Size: 15rem; color: rgb(111, 199, 45)">
                             50
                         </font>
                     </div>
                     <div style="margin: 0 auto; text-align:center; padding-top: 0.5rem">
-                        <font style="font-Size: 5rem; color: rgb(111, 199, 45)">
+                        <font style="font-Size: 4rem; color: rgb(111, 199, 45)">
                             ▼ 50
                         </font>
                     </div>
@@ -80,11 +80,14 @@
                     </div>
                 </td>
             </tr>
+        </table>
 
+        <table class="panel" style="margin: 0 auto; width: 95%; margin-top: 5px;">
             <tr>
-                <td colspan="2" style="text-align:center">
-                   <!--  <div id="npsReport" style="margin:0 auto; height: 200px; width: 320px; ">
-                    </div> -->
+                <td colspan="2" style="text-align:center; border:1px solid #ECECEC;">
+                    <h1 style="font-Size: 5rem">历史NPS得分变更回复率</h1>
+                    <div id="npsReport" style="margin:0 auto; height: 150px; width: 100%; ">
+                    </div>
                 </td>
             </tr>
         </table>
@@ -252,7 +255,7 @@
                 grid: {
                     // left: '15%',
                     // right: '10%',
-                    top: '5%',
+                    top: '10%',
                     height: '70%%',
                     weight: '50%'
                 },
