@@ -28,14 +28,13 @@
 
     h1 {
         padding-left: 1rem;
+        margin-top: 1rem;
     }
 
     canvas {
         display: none;
-        /*border: 1px solid red;*/
         display: block;
         margin: 0 auto;
-        /*background: -webkit-linear-gradient(top, #0e83f5 0%, #21bdf6 100%);*/
     }
 
     table {
@@ -50,12 +49,52 @@
     }
 
     .panel2 {
-        background: #ffffff;
-        margin-bottom: 5px;
         float: left;
         margin-top: 5px;
         margin-left: 2.5%;
         width: 46.25%;
+    }
+
+    /*活动留言样式*/
+    .ds-post-main {
+        position: relative;
+        width: 95%;
+        margin-left: 0.5rem;
+        margin-bottom: 5px;
+    }
+
+    .ds-avatar {
+        position: absolute;
+        padding: 2px;
+        background: #3f3f3f;
+        border-radius: 50%;
+    }
+
+    .ds-avatar {
+        display: block;
+        width: 2rem;
+        height: 2rem;
+        background: #01cc01;
+        border-radius: 50%;
+    }
+
+    .ds-comment-body {
+        margin-left: 1rem;
+        padding: 0.75rem 0.75rem 0.75rem 2rem ;
+        background: #F0F0E3;
+        font-size: 3.3rem;
+    }
+
+    .user-name {
+        font-size: 3.7rem;
+        font-weight: bold;
+        color: #DE4C1C;
+        margin-bottom: 5px;
+    }
+
+    .campaign-name {
+        align: right;
+        font-size: 3rem;
     }
 
     </style>
@@ -124,50 +163,89 @@
                 <table class="table table-hover table-expandable" style="font-Size: 3rem;">
                     <thead>
                         <tr>
-                            <th style="width: 50%">SBU</th>
-                            <th style="width: 50%">NPS得分</th>
+                            <th style="width: 33%">SBU</th>
+                            <th style="width: 33%">NPS得分</th>
+                            <th style="width: 33%">举办场次</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>PD</td>
                             <td>85</td>
+                            <td>2</td>
                         </tr>
                         <tr>
-                            <td colspan="3">
+                            <td colspan="4">
                                 <h7>百影争锋腹透论术-百特腹透置管技能研讨会-东北专场</h7>
                                 <ul>
                                     <li>NPS得分：80</li>
                                     <li>回复率：79%</li>
+                                    <li>举办日期：2017年8月7日</li>
                                 </ul>
                                 <h7>中华静脉峰会</h7>
                                 <ul>
                                     <li>NPS得分：90</li>
                                     <li>回复率：80%</li>
+                                    <li>举办日期：2017年8月7日</li>
                                 </ul>
                             </td>
                         </tr>
                         <tr>
                             <td>HD</td>
                             <td>87</td>
+                            <td>2</td>
                         </tr>
                         <tr>
-                            <td colspan="3">
+                            <td colspan="4">
                                 <h7>乐透未来-温州场</h7>
                                 <ul>
                                     <li>NPS得分：90</li>
                                     <li>回复率：90%</li>
+                                    <li>举办日期：2017年8月7日</li>
+
                                 </ul>
                                 <h7>百影争锋腹透论术-百特腹透置管技能研讨会-东北专场</h7>
                                 <ul>
                                     <li>NPS得分：84</li>
                                     <li>回复率：87%</li>
+                                    <li>举办日期：2017年8月7日</li>
                                 </ul>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+        </div>
+    </div>
+
+    <!-- 本月NPS得分与回复率 -->
+    <div class="row" style="margin: 0 auto;">
+        <div class="panel2 panel">
+            <h1 style="font-Size: 5rem">本月跟进拜访数</h1>
+            <div align="center">
+                <font style="font-Size: 15rem; color: rgb(111, 199, 45)">
+                    50
+                </font>
+            </div>
+            <!-- <div style="margin: 0 auto; text-align:center; padding-top: 0.5rem">
+                <font style="font-Size: 4rem; color: rgb(111, 199, 45)">
+                    ▼ 50
+                </font>
+            </div> -->
+        </div>
+
+        <div class="panel2 panel">
+            <h1 style="font-Size: 5rem">已完成跟进拜访数</h1>
+            <div align="center">
+                <font style="font-Size: 15rem; color: rgb(111, 199, 45)">
+                    35
+                </font>
+            </div>
+            <!-- <div style="margin: 0 auto; text-align:center; padding-top: 0.5rem">
+                <font style="font-Size: 4rem; color: rgb(111, 199, 45)">
+                    ▼ 50
+                </font>
+            </div> -->
         </div>
     </div>
 
@@ -372,6 +450,58 @@
         };
         myChart.setOption(option);
     </script>
+
+    <!-- 好评评价 -->
+    <div class="row panel">
+        <h1 style="font-Size: 5rem">推荐者点评</h1>
+
+        <div class="ds-post-main">
+            <div class="ds-avatar">
+                <a href="#nogo" > </a>
+            </div>
+            <div class="ds-comment-body">
+                <div class="user-name">匿名用户</div>
+                <p>我觉得这场会收获很大！</p>
+                <p class="campaign-name" align="right" ><i>中华静脉峰会</i></p>
+            </div>
+        </div>
+        <div class="ds-post-main">
+            <div class="ds-avatar">
+                <a href="#nogo" > </a>
+            </div>
+            <div class="ds-comment-body">
+                <div class="user-name">匿名用户</div>
+                <p>感觉收获很多！！</p>
+                <p class="campaign-name" align="right" ><i>百影争锋腹透论术-百特腹透置管技能研讨会-东北专场</i></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 差评评价 -->
+    <div class="row panel">
+        <h1 style="font-Size: 5rem">批评者点评</h1>
+
+        <div class="ds-post-main">
+            <div class="ds-avatar">
+                <a href="#nogo" > </a>
+            </div>
+            <div class="ds-comment-body">
+                <div class="user-name">匿名用户</div>
+                <p>希望案例再多一点！</p>
+                <p class="campaign-name" align="right" ><i>中华静脉峰会</i></p>
+            </div>
+        </div>
+        <div class="ds-post-main">
+            <div class="ds-avatar">
+                <a href="#nogo" > </a>
+            </div>
+            <div class="ds-comment-body">
+                <div class="user-name">匿名用户</div>
+                <p>邀请的专家没听过！</p>
+                <p class="campaign-name" align="right" ><i>百影争锋腹透论术-百特腹透置管技能研讨会-东北专场</i></p>
+            </div>
+        </div>
+    </div>
 
     <!-- 控制页面大小 -->
     <script>
