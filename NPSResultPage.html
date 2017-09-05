@@ -493,7 +493,10 @@
                     ctx.fillStyle = 'rgba(91, 171, 226, 1)';
                 }
 
-                ctx.font = '28px Microsoft yahei';
+                var html = document.documentElement;
+                var fontSize = 7 * html.clientWidth / 100;
+
+                ctx.font = fontSize + 'px Microsoft yahei';
                 // ctx.font = '7rem Microsoft yahei';
                 ctx.textAlign = 'center';
                 ctx.textBaseLine = 'top';
