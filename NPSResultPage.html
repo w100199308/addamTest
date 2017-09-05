@@ -73,6 +73,7 @@
 </head>
 
 <body>
+    <!-- 本月NPS得分与回复率 -->
     <div class="row" style="margin: 0 auto;">
         <div class="panel2 panel">
             <h1 style="font-Size: 5rem">本月NPS得分</h1>
@@ -101,6 +102,7 @@
         </div>
     </div>
 
+    <!-- 三个月NPS得分与回复率变化 -->
     <div class="panel">
         <h1 style="font-Size: 5rem">近三月NPS得分与回复率</h1>
         <table>
@@ -113,6 +115,7 @@
         </table>
     </div>
 
+    <!-- 本月各SBU NPS得分 -->
     <div class="panel">
         <h1 style="font-Size: 5rem">各SBU本月NPS得分</h1>
         <div class="htmleaf-container">
@@ -120,30 +123,32 @@
                 <table class="table table-hover table-expandable" style="font-Size: 2rem;">
                     <thead>
                         <tr>
-                            <th>Country</th>
-                            <th>Population</th>
-                            <th>Area</th>
-                            <th>Official languages</th>
+                            <th style="width: 50%">SBU</th>
+                            <!-- <th>活动名称</th> -->
+                            <th style="width: 50%">NPS得分</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>United States of America</td>
-                            <td>306,939,000</td>
-                            <td>9,826,630 km2</td>
-                            <td>English</td>
+                            <td>PD</td>
+                            <!-- <td></td> -->
+                            <td>80</td>
                         </tr>
                         <tr>
-                            <td colspan="5">
-                                <h4>Additional information</h4>
+                            <td colspan="2">
+                                <h7>百影争锋腹透论术-百特腹透置管技能研讨会-东北专场</h7>
                                 <ul>
-                                    <li><a href="http://en.wikipedia.org/wiki/Usa">USA on Wikipedia</a></li>
-                                    <li><a href="http://nationalatlas.gov/">National Atlas of the United States</a></li>
-                                    <li><a href="http://www.htmleaf.com/">jQuery之家</a></li>
+                                    <li>NPS得分：80</li>
+                                    <li>回复率：80%</li>
+                                </ul>
+                                <h7>百影争锋腹透论术-百特腹透置管技能研讨会-东北专场</h7>
+                                <ul>
+                                    <li>NPS得分：80</li>
+                                    <li>回复率：80%</li>
                                 </ul>
                             </td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <td>United Kingdom </td>
                             <td>61,612,300</td>
                             <td>244,820 km2</td>
@@ -207,12 +212,13 @@
                                     <li><a href="http://www.htmleaf.com/">jQuery之家</a></li>
                                 </ul>
                             </td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+
     <!-- NPS仪表盘插件 -->
     <script type="text/javascript">
         window.onload = function() {
@@ -354,6 +360,7 @@
 
         }
     </script>
+
     <!-- NPS3月走势图 -->
     <script type="text/javascript">
         var myChart = echarts.init(document.getElementById('npsReport'));
@@ -414,6 +421,7 @@
         myChart.setOption(option);
     </script>
 
+    <!-- 控制页面大小 -->
     <script>
         var html = document.documentElement;
         $('#div111').width($('#div222').width());
