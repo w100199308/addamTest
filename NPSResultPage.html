@@ -11,9 +11,9 @@
     <!-- 表格手风琴 -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/default.css">
-    <link rel="stylesheet" href="css/bootstrap-table-expandable.css">
-    <script src="js/bootstrap-table-expandable.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/default.css">
+    <link rel="stylesheet" href="./css/bootstrap-table-expandable.css">
+    <script src="./js/bootstrap-table-expandable.js"></script>
     <!--  -->
     <title>canvas仪表盘动画效果</title>
     <style type="text/css">
@@ -58,6 +58,7 @@
     }
 
     </style>
+
     <script type="text/javascript">
     (function() {
         document.addEventListener('DOMContentLoaded', function() {
@@ -75,7 +76,7 @@
     <div class="row" style="margin: 0 auto;">
         <div class="panel2 panel">
             <h1 style="font-Size: 5rem">本月NPS得分</h1>
-            <div align="center" style="padding-top: 1rem">
+            <div id="div111" align="center" style="padding-top: 1rem;">
                 <font style="font-Size: 15rem; color: rgb(111, 199, 45)">
                     50
                 </font>
@@ -89,10 +90,10 @@
 
         <div class="panel2 panel">
             <h1 style="font-Size: 5rem">本月回复率</h1>
-            <div>
+            <div id="div222" align="center" style="padding-top: 1rem;">
                 <canvas id="canvas"></canvas>
             </div>
-            <div style="margin: 0 auto; text-align:center;">
+            <div style="margin: 0 auto; text-align:center; padding-top: 0.5rem">
                 <font id="NPSchange" style="font-Size: 4rem">
                     <!-- ↑↓上升50 -->
                 </font>
@@ -116,7 +117,7 @@
         <h1 style="font-Size: 5rem">各SBU本月NPS得分</h1>
         <div class="htmleaf-container">
             <div class="container">
-                <table class="table table-hover table-expandable">
+                <table class="table table-hover table-expandable" style="font-Size: 2rem;">
                     <thead>
                         <tr>
                             <th>Country</th>
@@ -412,6 +413,13 @@
         };
         myChart.setOption(option);
     </script>
+
+    <script>
+        var html = document.documentElement;
+        $('#div111').width($('#div222').width());
+        $('#div111').height(html.clientWidth / 4 - 6.4);
+    </script>
+
 </body>
 
 </html>
