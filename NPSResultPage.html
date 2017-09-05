@@ -21,7 +21,7 @@
     html,
     body {
         width: 100%;
-        height: 100%;
+        /*height: 100%;*/
         margin: 0;
         background: #E0EAF6;
     }
@@ -45,12 +45,11 @@
         background: #ffffff;
         margin: 0 auto;
         width: 95%;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
     }
 
     .panel2 {
         float: left;
-        margin-top: 5px;
         margin-left: 2.5%;
         width: 46.25%;
     }
@@ -114,7 +113,7 @@
 
 <body>
     <!-- 本月NPS得分与回复率 -->
-    <div class="row" style="margin: 0 auto;">
+    <div class="row" style="margin: 0 auto; margin-top: 10px;">
         <div class="panel2 panel">
             <h1 style="font-Size: 5rem">本月NPS得分</h1>
             <div id="div111" align="center" style="padding-top: 1rem;">
@@ -246,6 +245,58 @@
                     ▼ 50
                 </font>
             </div> -->
+        </div>
+    </div>
+
+    <!-- 好评评价 -->
+    <div class="row panel">
+        <h1 style="font-Size: 5rem">推荐者点评</h1>
+
+        <div class="ds-post-main">
+            <div class="ds-avatar">
+                <a href="#nogo" > </a>
+            </div>
+            <div class="ds-comment-body">
+                <div class="user-name">匿名用户</div>
+                <p>我觉得这场会收获很大！</p>
+                <p class="campaign-name" align="right" ><i>中华静脉峰会</i></p>
+            </div>
+        </div>
+        <div class="ds-post-main">
+            <div class="ds-avatar">
+                <a href="#nogo" > </a>
+            </div>
+            <div class="ds-comment-body">
+                <div class="user-name">匿名用户</div>
+                <p>感觉收获很多！！</p>
+                <p class="campaign-name" align="right" ><i>百影争锋腹透论术-百特腹透置管技能研讨会-东北专场</i></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 差评评价 -->
+    <div class="row panel">
+        <h1 style="font-Size: 5rem">批评者点评</h1>
+
+        <div class="ds-post-main">
+            <div class="ds-avatar">
+                <a href="#nogo" > </a>
+            </div>
+            <div class="ds-comment-body">
+                <div class="user-name">匿名用户</div>
+                <p>希望案例再多一点！</p>
+                <p class="campaign-name" align="right" ><i>中华静脉峰会</i></p>
+            </div>
+        </div>
+        <div class="ds-post-main">
+            <div class="ds-avatar">
+                <a href="#nogo" > </a>
+            </div>
+            <div class="ds-comment-body">
+                <div class="user-name">匿名用户</div>
+                <p>邀请的专家没听过！</p>
+                <p class="campaign-name" align="right" ><i>百影争锋腹透论术-百特腹透置管技能研讨会-东北专场</i></p>
+            </div>
         </div>
     </div>
 
@@ -450,58 +501,6 @@
         };
         myChart.setOption(option);
     </script>
-
-    <!-- 好评评价 -->
-    <div class="row panel">
-        <h1 style="font-Size: 5rem">推荐者点评</h1>
-
-        <div class="ds-post-main">
-            <div class="ds-avatar">
-                <a href="#nogo" > </a>
-            </div>
-            <div class="ds-comment-body">
-                <div class="user-name">匿名用户</div>
-                <p>我觉得这场会收获很大！</p>
-                <p class="campaign-name" align="right" ><i>中华静脉峰会</i></p>
-            </div>
-        </div>
-        <div class="ds-post-main">
-            <div class="ds-avatar">
-                <a href="#nogo" > </a>
-            </div>
-            <div class="ds-comment-body">
-                <div class="user-name">匿名用户</div>
-                <p>感觉收获很多！！</p>
-                <p class="campaign-name" align="right" ><i>百影争锋腹透论术-百特腹透置管技能研讨会-东北专场</i></p>
-            </div>
-        </div>
-    </div>
-
-    <!-- 差评评价 -->
-    <div class="row panel">
-        <h1 style="font-Size: 5rem">批评者点评</h1>
-
-        <div class="ds-post-main">
-            <div class="ds-avatar">
-                <a href="#nogo" > </a>
-            </div>
-            <div class="ds-comment-body">
-                <div class="user-name">匿名用户</div>
-                <p>希望案例再多一点！</p>
-                <p class="campaign-name" align="right" ><i>中华静脉峰会</i></p>
-            </div>
-        </div>
-        <div class="ds-post-main">
-            <div class="ds-avatar">
-                <a href="#nogo" > </a>
-            </div>
-            <div class="ds-comment-body">
-                <div class="user-name">匿名用户</div>
-                <p>邀请的专家没听过！</p>
-                <p class="campaign-name" align="right" ><i>百影争锋腹透论术-百特腹透置管技能研讨会-东北专场</i></p>
-            </div>
-        </div>
-    </div>
 
     <!-- 控制页面大小 -->
     <script>
