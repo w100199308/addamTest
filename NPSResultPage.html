@@ -9,86 +9,6 @@
 
     <!--  -->
     <title>NPS微信仪表盘Demo</title>
-    <style type="text/css">
-    html,
-    body {
-        width: 100%;
-        /*height: 100%;*/
-        margin: 0;
-        background: #E0EAF6;
-    }
-
-    h1 {
-        padding-left: 1rem;
-        margin-top: 1rem;
-    }
-
-    canvas {
-        display: none;
-        display: block;
-        margin: 0 auto;
-    }
-
-    table {
-        width : 100%;
-    }
-
-    .panel {
-        background: #ffffff;
-        margin: 0 auto;
-        width: 95%;
-        margin-bottom: 10px;
-    }
-
-    .panel2 {
-        float: left;
-        margin-left: 2.5%;
-        width: 46.25%;
-    }
-
-    /*活动留言样式*/
-    .ds-post-main {
-        position: relative;
-        width: 95%;
-        margin-left: 0.5rem;
-        margin-bottom: 5px;
-    }
-
-    .ds-avatar {
-        position: absolute;
-        padding: 2px;
-        background: #3f3f3f;
-        border-radius: 50%;
-    }
-
-    .ds-avatar {
-        display: block;
-        width: 2rem;
-        height: 2rem;
-        background: #01cc01;
-        border-radius: 50%;
-    }
-
-    .ds-comment-body {
-        margin-left: 1rem;
-        padding: 0.75rem 0.75rem 0.75rem 2rem ;
-        background: #F0F0E3;
-        font-size: 3.3rem;
-    }
-
-    .user-name {
-        font-size: 3.7rem;
-        font-weight: bold;
-        color: #DE4C1C;
-        margin-bottom: 5px;
-    }
-
-    .campaign-name {
-        align: right;
-        font-size: 3rem;
-    }
-
-    </style>
 
     <script type="text/javascript">
     (function() {
@@ -104,8 +24,7 @@
 </head>
 
 <body>
-<span id="AD_L4EVER">你的JS代码在这里!</span>
-
+    <span id="loading">你的JS代码在这里!</span>
 
     <script type="text/javascript" src="./echarts.min.js"></script>
     <script type="text/javascript" src="./jquery-3.2.1.js"></script>
@@ -114,11 +33,89 @@
     <link rel="stylesheet" href="./css/bootstrap-table-expandable.css">
     <script src="./js/bootstrap-table-expandable.js"></script>
 
-<script>
-    // L4EVER.innerHTML=AD_L4EVER.innerHTML;
-    // AD_L4EVER.innerHTML="";
-    &('#AD_L4EVER').innerHTML = '';
-</script>
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            /*height: 100%;*/
+            margin: 0;
+            background: #E0EAF6;
+        }
+
+        h1 {
+            padding-left: 1rem;
+            margin-top: 1rem;
+        }
+
+        canvas {
+            display: none;
+            display: block;
+            margin: 0 auto;
+        }
+
+        table {
+            width : 100%;
+        }
+
+        .panel {
+            background: #ffffff;
+            margin: 0 auto;
+            width: 95%;
+            margin-bottom: 10px;
+        }
+
+        .panel2 {
+            float: left;
+            margin-left: 2.5%;
+            width: 46.25%;
+        }
+
+        /*活动留言样式*/
+        .ds-post-main {
+            position: relative;
+            width: 95%;
+            margin-left: 0.5rem;
+            margin-bottom: 5px;
+        }
+
+        .ds-avatar {
+            position: absolute;
+            padding: 2px;
+            background: #3f3f3f;
+            border-radius: 50%;
+        }
+
+        .ds-avatar {
+            display: block;
+            width: 2rem;
+            height: 2rem;
+            background: #01cc01;
+            border-radius: 50%;
+        }
+
+        .ds-comment-body {
+            margin-left: 1rem;
+            padding: 0.75rem 0.75rem 0.75rem 2rem ;
+            background: #F0F0E3;
+            font-size: 3.3rem;
+        }
+
+        .user-name {
+            font-size: 3.7rem;
+            font-weight: bold;
+            color: #DE4C1C;
+            margin-bottom: 5px;
+        }
+
+        .campaign-name {
+            align: right;
+            font-size: 3rem;
+        }
+    </style>
+
+    <script>
+        var loading = document.getElementById('loading');
+        loading.innerHTML = '';
+    </script>
 
     <!-- 本月NPS得分与回复率 -->
     <div class="row" style="margin: 0 auto; margin-top: 10px;">
