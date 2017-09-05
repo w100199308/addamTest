@@ -20,10 +20,17 @@
             // 等价于html.style.fontSize = windowWidth / 640 * 100 + 'px';
         }, false);
     })();
+
+
+    screen.orientation.addEventListener("change", function(e) {
+        alert(screen.orientation.type + " " + screen.orientation.angle);
+        window.location.reload();
+
+    }, false);
     </script>
 </head>
 
-<body>
+<body onload="screenOrientationEvent()">
     <span id="loading">你的JS代码在这里!</span>
 
     <script type="text/javascript" src="./echarts.min.js"></script>
@@ -451,58 +458,32 @@
     <script type="text/javascript">
         var myChart = echarts.init(document.getElementById('npsReport'));
         option = {
-            baseOption: {
-                grid: {
-                    // left: '15%',
-                    // right: '10%',
-                    top: '10%',
-                    height: '70%%',
-                    weight: '50%'
-                },
-                xAxis: {
-                    type: 'category',
-                    data: ['5月', '6月', '7月', '8月']
-                },
-                yAxis: {
-                    type: 'value',
-                    splitNumber: 1,
-                    value: 'NPS得分, '
-                },
-                series: [{
-                    type: 'line',
-                    data: [70, 60, 50, 90]
-                }]
+            grid: {
+                top: '17%',
+                height: '60%%',
+                weight: '50%'
             },
-            media: [{
-                    option: {
-
-                    }
-                },
-                {
-                    query: {
-                        minAspectRatio: 1
-                    },
-                    option: {
-
-                    }
-                },
-                {
-                    query: {
-                        maxAspectRatio: 1
-                    },
-                    option: {
-
-                    }
-                },
-                {
-                    query: {
-                        maxWidth: 500
-                    },
-                    option: {
-
-                    }
-                }
-            ]
+            legend: {
+                data:['NPS得分','回复率']
+            },
+            xAxis: {
+                type: 'category',
+                data: ['5月', '6月', '7月', '8月']
+            },
+            yAxis: {
+                type: 'value',
+                splitNumber: 1,
+            },
+            series: [{
+                name: 'NPS得分',
+                type: 'line',
+                data: [70, 60, 50, 90]
+            },
+            {
+                name: '回复率',
+                type: 'line',
+                data: [90, 70, 80, 87]
+            }]
         };
         myChart.setOption(option);
     </script>
