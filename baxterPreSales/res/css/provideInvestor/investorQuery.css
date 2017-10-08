@@ -1,0 +1,103 @@
+.search-input + button::after, .search-input {
+  border: 1px solid #18b4ed !important
+}
+
+.weui_btn_primary:not(.weui_btn_disabled):active {
+  background-color: #18b4ed;
+}
+
+.weui_btn_primary {
+  background-color: #18b4ed;
+}
+
+.proDate {
+  font-size: 13px;
+  color: #949494;
+  padding-right: 10px;
+}
+
+.proState {
+  font-size: 14px;
+  color: #18b4ed;
+}
+
+.secondSta {
+  max-width: 90px;
+  padding-right: 1px;
+  text-align: right;
+}
+
+.mesDetail .icon {
+  font-size: 22px;
+  color: #18b4ed;
+}
+
+.weui_label {
+  width: 35px;
+}
+
+.page-bd-15 {
+  padding: 20px 15px;
+}
+
+.weui_cell {
+  padding: 10px;
+}
+
+.weui_icon_waiting:before {
+  color: #18b4ed;
+}
+
+.weui_btn_warn {
+  background-color: #18b4ed;
+}
+
+.wave {
+  height: 7px;
+  background-size: 10px 15px;
+  /*background-repeat:no-repeat ;*/
+  background-image: linear-gradient(135deg, transparent 45%, #BFBFBF 55%, transparent 60%), linear-gradient(45deg, transparent 45%, #BFBFBF 55%, transparent 60%);
+  margin: 20px 0 -10px;
+}
+
+.mesDetail {
+  padding: 10px;
+  display: none;
+}
+
+.weui_cells:before {
+  border-top: 0;
+}
+
+.investorName {
+  font-size: 30px;
+  line-height: 50px;
+  padding-left: 15px;
+}
+
+.weui_cell:before {
+  left: 0;
+}
+
+.messIcon {
+  line-height: 50px;
+  text-align: center;
+}
+
+.messIcon .icon {
+  font-size: 25px;
+}
+
+.white {
+  background-color: #fff;
+}
+
+.search-input, .search-input + button::after, .search-input + button::after {
+  border: 1px solid #18b4ed !important;
+  outline: 0;
+}
+
+.weui_cell_hd {
+  width: 100px;
+  color: #888;
+}

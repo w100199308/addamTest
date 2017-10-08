@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <meta content="telephone=no" name="format-detection">
+  <title>发票申请</title>
+  <link rel="stylesheet" href="res/css/weui.css">
+  <link rel="stylesheet" href="res/css/weui2.css">
+  <link rel="stylesheet" href="res/css/icon.css">
+  <link rel="stylesheet" href="res/css/provideProject/projectStandards.css">
+  <script src="res/js/zepto.min.js"></script>
+</head>
+<body>
+<div id="allContainer">
+
+  <!--项目填写标准-->
+  <div id="projectStandards" class="projectStandards">
+    <div class="weui_cells_title">
+      <i class="icon icon-18"></i> 基本信息
+    </div>
+
+    <div class="weui_cells weui_cells_access">
+      <a id="selectCode" class="weui_cell " href="javascript:;">
+        <div class="weui_cell_bd weui_cell_primary">
+          <p id="code">请点击选择SR号</p>
+        </div>
+        <div class="weui_cell_ft"></div>
+      </a>
+    </div>
+
+    <div class="weui_cells weui_cells_form otherStyle">
+
+      <div class="weui_cell">
+        <div class="weui_cell_hd"><label class="weui_label">状态</label></div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p class="weui_input">已报销</p>
+        </div>
+      </div>
+      <div class="weui_cell">
+        <div class="weui_cell_hd"><label class="weui_label">填写人</label></div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p class="weui_input">某某某</p>
+        </div>
+      </div>
+      <div class="weui_cell">
+        <div class="weui_cell_hd"><label class="weui_label">发票编号</label></div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p class="weui_input">1fasdfsdf3</p>
+        </div>
+      </div>
+      <div class="weui_cell">
+        <div class="weui_cell_hd"><label class="weui_label">填写日期</label></div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p class="weui_input">2017-02-23</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="weui_cells_title">
+      <i class="icon icon-18"></i> 邮寄信息
+    </div>
+    <div class="weui_cells weui_cells_form">
+      <div class="weui_cell">
+        <div class="weui_cell_hd"><label class="weui_label">收件人</label></div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p class="weui_input">某某某</p>
+        </div>
+      </div>
+      <div class="weui_cell">
+        <div class="weui_cell_hd"><label class="weui_label">号码</label></div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p class="weui_input">13337147077</p>
+        </div>
+      </div>
+      <div class="weui_cell">
+        <div class="weui_cell_hd"><label class="weui_label">科室</label></div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p class="weui_input">某某科室</p>
+        </div>
+      </div>
+      <div class="weui_cell">
+        <div class="weui_cell_hd"><label class="weui_label">单位</label></div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p class="weui_input">某某单位</p>
+        </div>
+      </div>
+      <div class="weui_cell">
+        <div class="weui_cell_hd"><label class="weui_label">地址</label></div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p class="weui_input">某某单位</p>
+        </div>
+      </div>
+      <div class="weui_cell">
+        <div class="weui_cell_hd"><label class="weui_label">编码</label></div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p class="weui_input">某某单位</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="weui_cells_title">
+      <i class="icon icon-18"></i> 开票内容
+    </div>
+    <div class="weui_cells weui_cells_form chattedMes">
+      <div class="weui_cell">
+        <div class="weui_cell_hd"><label class="weui_label">发票抬头</label></div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p class="weui_input">某某某</p>
+        </div>
+      </div>
+      <div class="weui_cell">
+        <div class="weui_cell_hd"><label class="weui_label">纳税识别号</label></div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p class="weui_input">23423d</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="weui_cells_title">
+      <i class="icon icon-18"></i> 录入开票明细1
+    </div>
+    <div class="weui_cells weui_cells_form chattedMes">
+      <div class="weui_cell">
+        <div class="weui_cell_hd"><label class="weui_label">货物名称</label></div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p class="weui_input">大型仪器</p>
+        </div>
+      </div>
+
+      <div class="weui_cell weui_cell_select weui_select_after">
+        <div class="weui_cell_hd">
+          <label for="" class="weui_label">规格型号</label>
+        </div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <select class="weui_select" name="select2">
+            <option value="1">请点击选择</option>
+            <option value="2">a型号</option>
+            <option value="3">b型号</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="weui_cell">
+        <div class="weui_cell_hd"><label class="weui_label">单位</label></div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p class="weui_input">元</p>
+        </div>
+      </div>
+      <div class="weui_cell">
+        <div class="weui_cell_hd"><label class="weui_label">数量</label></div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p class="weui_input">1</p>
+        </div>
+      </div>
+      <div class="weui_cell">
+        <div class="weui_cell_hd"><label class="weui_label">单价</label></div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p class="weui_input">￥10.00</p>
+        </div>
+      </div>
+      <div class="weui_cell">
+        <div class="weui_cell_hd"><label class="weui_label">总金额</label></div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p class="weui_input">￥10.00</p>
+        </div>
+      </div>
+      <div class="weui_cell">
+        <div class="weui_cell_hd"><label class="weui_label">备注</label></div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p class="weui_input">此条货物加急</p>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="page-hd">
+      <a id="startFill" href="javascript:;" class="weui_btn bg-blue">保存并提交审批</a>
+      <a href="javascript:;" class="weui_btn weui_btn_default">保存</a>
+    </div>
+
+  </div>
+
+  <!--选择sr号-->
+  <div id="selectSR" style="display: none">
+
+    <div class="weui_search_bar">
+      <input type="search" class="search-input" id="search" placeholder="请输入SR号搜索" style="box-sizing:content-box">
+      <button class="weui_btn weui_btn_mini bg-blue"><i class="icon icon-4"></i></button>
+    </div>
+
+    <!--<div id="allCode" class="weui_cells weui_cells_access srCode">-->
+    <!--<a class="weui_cell " href="javascript:;">-->
+    <!--<div class="weui_cell_bd weui_cell_primary">-->
+    <!--<p>SR号1</p>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;<div class="weui_cell_ft"></div>&ndash;&gt;-->
+    <!--</a>-->
+    <!--<a class="weui_cell " href="javascript:;">-->
+    <!--<div class="weui_cell_bd weui_cell_primary">-->
+    <!--<p>SR号2</p>-->
+    <!--</div>-->
+    <!--</a>-->
+    <!--<a class="weui_cell " href="javascript:;">-->
+    <!--<div class="weui_cell_bd weui_cell_primary">-->
+    <!--<p>SR号3</p>-->
+    <!--</div>-->
+    <!--</a>-->
+    <!--<a class="weui_cell " href="javascript:;">-->
+    <!--<div class="weui_cell_bd weui_cell_primary">-->
+    <!--<p>SR号4</p>-->
+    <!--</div>-->
+    <!--</a>-->
+    <!--<a class="weui_cell " href="javascript:;">-->
+    <!--<div class="weui_cell_bd weui_cell_primary">-->
+    <!--<p>SR号5</p>-->
+    <!--</div>-->
+    <!--</a>-->
+    <!--</div>-->
+
+    <div class="weui_cells weui_cells_checkbox">
+      <label class="weui_cell weui_check_label" for="s11">
+        <div class="weui_cell_hd">
+          <input type="checkbox" class="weui_check" name="checkbox1" id="s11" checked="checked">
+          <i class="weui_icon_checked"></i>
+        </div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p>SR号1</p>
+        </div>
+      </label>
+      <label class="weui_cell weui_check_label" for="s12">
+        <div class="weui_cell_hd">
+          <input type="checkbox" name="checkbox1" class="weui_check" id="s12">
+          <i class="weui_icon_checked"></i>
+        </div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p>SR号2</p>
+        </div>
+      </label>
+      <label class="weui_cell weui_check_label" for="s13">
+        <div class="weui_cell_hd">
+          <input type="checkbox" name="checkbox1" class="weui_check" id="s13">
+          <i class="weui_icon_checked"></i>
+        </div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p>SR号3</p>
+        </div>
+      </label>
+      <label class="weui_cell weui_check_label" for="s14">
+        <div class="weui_cell_hd">
+          <input type="checkbox" name="checkbox1" class="weui_check" id="s14">
+          <i class="weui_icon_checked"></i>
+        </div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p>SR号4</p>
+        </div>
+      </label>
+    </div>
+
+    <div class="page-hd">
+      <a id="return" href="javascript:;" class="weui_btn bg-blue">确定</a>
+      <a href="javascript:;" class="weui_btn weui_btn_default">返回</a>
+    </div>
+
+
+  </div>
+
+</div>
+
+</body>
+<script src="res/js/provideProject/projectStandards.js"></script>
+</html>

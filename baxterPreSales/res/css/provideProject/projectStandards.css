@@ -1,0 +1,170 @@
+.selectIndustry .weui_label {
+  width: 45px;
+}
+
+.selectIndustry .weui_cell_select .weui_cell_bd:after {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  top: 40%;
+}
+
+.selectIndustry .weui_cell_primary {
+  border-left: 1px solid #f2f2f2;
+  padding-left: 10px;
+}
+
+.selectIndustry .weui_select_after {
+  padding-left: 10px;
+}
+
+.selectIndustry .page-hd {
+  padding: 25px 15px;
+}
+
+.weui_btn_warn {
+  background: #18b4ed;
+}
+
+/*.strategyShow, .projectStandards {*/
+/*display: none;*/
+/*}*/
+
+.strategyShow .weui_panel_hd {
+  padding: 5px 10px;
+  color: #18b4ed;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.strategyShow .weui_panel_hd:after {
+  left: 0;
+}
+
+.strategyShow .weui_media_box .weui_media_desc {
+  color: #666;
+}
+
+.strategyShow > .weui_panel:nth-child(2) {
+  margin-top: 15px;
+}
+
+.projectStandards .weui_cells_title {
+  color: #18b4ed;
+}
+
+.projectStandards .icon {
+  color: #18b4ed;
+}
+
+.projectStandards .weui_label {
+  width: 75px;
+  color: #888;
+}
+
+.projectStandards .weui_cells {
+  font-size: 16px;
+}
+
+.sameMes {
+  font-size: 16px;
+  color: #888;
+}
+
+.chattedMes .weui_label {
+  width: 90px;
+}
+
+.projectStandards .weui_uploader_file {
+  width: 70px;
+  height: 70px;
+  margin-right: 15px;
+}
+
+.errorTip {
+  padding: 2px 15px;
+  background: rgba(000, 000, 000, .6);
+  color: #fff;
+  border-radius: 107px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  display: inline-block;
+}
+
+.reminder {
+  background-color: #18b4ed;
+}
+
+.reminder .icon {
+  font-size: 80px;
+  color: #fff;
+}
+
+.selectIndustry .weui_cells {
+  margin-top: 25px;
+}
+
+.mesText {
+  color: #fff;
+  text-align: right;
+  line-height: 128px;
+  font-weight: bolder;
+}
+
+.reminder > .weui-flex-item:last-child {
+  text-align: center;
+}
+
+.errorMes .weui_msg_desc {
+  word-wrap: break-word;
+}
+
+.errorMes .weui_icon_waiting:before {
+  color: #18b4ed;
+}
+
+.shadowImgs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 100;
+}
+
+.shadowImgs > img {
+  max-width: 100%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+.weui_cell:before {
+  left: 0;
+}
+
+.otherStyle {
+  margin-top: 0;
+}
+
+.srCode {
+  margin-top: 8px;
+}
+
+.search-input, .search-input + button::after, .search-input + button::after {
+  border: 1px solid #18b4ed !important;
+  outline: 0;
+}
+
+.weui_cells_checkbox .weui_check:checked + .weui_icon_checked:before {
+  color: #18b4ed;
+}
+
+.weui_cells:after,.weui_cells:before {
+  border-bottom: 0;
+}

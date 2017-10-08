@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <title>应收账款</title>
+  <link rel="stylesheet" href="res/css/weui.css">
+  <link rel="stylesheet" href="res/css/weui2.css">
+  <link rel="stylesheet" href="res/css/icon.css">
+  <link rel="stylesheet" href="res/css/provideInvestor/investorQuery.css">
+  <script src="res/js/zepto.min.js"></script>
+</head>
+<body>
+<div id="allContainer">
+
+  <!--信息列表-->
+  <div id="meslist" class="meslist">
+    <div class="weui_search_bar">
+      <input type="search" class="search-input" id="search" placeholder="可输入医院名搜索" style="box-sizing:content-box">
+      <button class="weui_btn weui_btn_mini weui_btn_primary"><i class="icon icon-4"></i></button>
+    </div>
+
+    <div class="weui_panel">
+      <div class="weui_panel_hd">应收账医院列表</div>
+      <div class="weui_panel_bd">
+        <div class="weui_media_box weui_media_small_appmsg">
+          <div id="allList" class="weui_cells weui_cells_access">
+            <a class="weui_cell" href="javascript:;">
+              <div class="weui_cell_bd weui_cell_primary">
+                <p>医院1</p>
+                <span class="proDate">2017-06-13</span>
+              </div>
+              <div class="weui_cell_bd weui_cell_primary secondSta">
+                <span class="proState">超期</span>
+              </div>
+              <span class="weui_cell_ft"></span>
+            </a>
+
+            <a class="weui_cell" href="javascript:;">
+              <div class="weui_cell_bd weui_cell_primary">
+                <p>医院2</p>
+                <span class="proDate">2017-07-13</span>
+              </div>
+              <div class="weui_cell_bd weui_cell_primary secondSta">
+                <span class="proState">超期</span>
+              </div>
+              <span class="weui_cell_ft"></span>
+            </a>
+
+            <a class="weui_cell" href="javascript:;">
+              <div class="weui_cell_bd weui_cell_primary">
+                <p>医院3</p>
+                <span class="proDate">2017-08-13</span>
+              </div>
+              <div class="weui_cell_bd weui_cell_primary secondSta">
+                <span class="proState">未超期</span>
+              </div>
+              <span class="weui_cell_ft"></span>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!--具体信息的显示-->
+  <div id="mesDetail" class="mesDetail">
+    <div class="weui-flex">
+      <div class="weui-flex-item">
+        <h3 id="hospital" class="investorName">医院名</h3>
+      </div>
+      <div class="weui-flex-item messIcon">
+        <i class="icon icon-49"></i>
+        <i class="icon icon-49"></i>
+        <i class="icon icon-49"></i>
+      </div>
+    </div>
+    <div class="wave"></div>
+    <div class="weui_cells">
+      <div class="weui_cell">
+        <div class="weui_cell_hd">大区</div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p>华中地区</p>
+        </div>
+      </div>
+
+      <div class="weui_cell">
+        <div class="weui_cell_hd">账期</div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p>2017-03-25</p>
+        </div>
+      </div>
+
+      <div class="weui_cell">
+        <div class="weui_cell_hd">金额</div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p>￥2330</p>
+        </div>
+      </div>
+
+      <div class="weui_cell">
+        <div class="weui_cell_hd">订单号</div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p>23456345</p>
+        </div>
+      </div>
+
+      <div class="weui_cell">
+        <div class="weui_cell_hd">SR号</div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p>asdf234sfd</p>
+        </div>
+      </div>
+
+      <div class="weui_cell">
+        <div class="weui_cell_hd">发票号</div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p>23234df234sfd</p>
+        </div>
+      </div>
+
+      <div class="weui_cell">
+        <div class="weui_cell_hd">到期日</div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p>2017-06-13</p>
+        </div>
+      </div>
+
+      <div class="weui_cell">
+        <div class="weui_cell_hd">是否超期</div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p>超期</p>
+        </div>
+      </div>
+
+      <div class="weui_cell">
+        <div class="weui_cell_hd">所属SBU</div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p>HD</p>
+        </div>
+      </div>
+
+      <div class="weui_cell no_access">
+        <div class="weui_cell_hd">负责工程师</div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p>某某某</p>
+        </div>
+      </div>
+
+      <div class="weui_cell">
+        <div class="weui_cell_hd">开票日期</div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p>2017-03-23</p>
+        </div>
+      </div>
+
+      <div class="weui_cell">
+        <div class="weui_cell_hd">客户反馈</div>
+        <div class="weui_cell_bd weui_cell_primary">
+          <p>客户反馈内容</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="page-hd">
+      <a id="returnMes" href="javascript:;" class="weui_btn bg-blue">返回</a>
+    </div>
+  </div>
+
+
+</div>
+</body>
+<script src="res/js/common.js"></script>
+<script src="res/js/provideInvestor/investorQuery.js"></script>
+</html>

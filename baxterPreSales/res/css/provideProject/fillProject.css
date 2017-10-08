@@ -1,0 +1,86 @@
+.weui_btn_warn {
+  background: #C2081F;
+}
+
+.weui_cells_title {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+}
+
+.weui_cells_title > div {
+  width: 50%;
+}
+
+.weui_cells_title > div:last-child {
+  text-align: right;
+}
+
+.icon {
+  color: #888;
+}
+
+.firstStep > .icon:first-child, .secondStep > .icon:nth-child(2), .thirdStep > .icon:nth-child(3) {
+  color: #C2081F;
+}
+
+.basicsMes .weui_cells:after {
+  border: 0;
+}
+
+.basicsMes .weui_cells {
+  margin-top: 0;
+}
+
+.basicsMes .weui_cell:before {
+  left: 0;
+}
+
+.weui_label {
+  width: 85px;
+  color: #888;
+}
+
+.weui_cells {
+  font-size: 16px;
+}
+
+.basicsMes .weui_cell_select .weui_cell_bd:after {
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  top: 40%
+}
+
+.defaultCol {
+  color: #ccc;
+}
+
+.errorTip {
+  padding: 2px 15px;
+  background: rgba(000, 000, 000, .6);
+  color: #fff;
+  border-radius: 107px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  display: inline-block;
+}
+
+.detailMes, .chatMes {
+  display: none;
+}
+
+.chatMes .weui_label {
+  width: 90px;
+}
+
+.sameMes {
+  font-size: 16px;
+  color: #888;
+}
+
+.weui_icon_success:before {
+  color: #FF6600;
+}

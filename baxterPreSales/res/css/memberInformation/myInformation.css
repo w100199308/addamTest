@@ -1,0 +1,57 @@
+.header {
+  width: 100%;
+  padding: 25px 0 15px;
+  text-align: center;
+  background: #C2081F;
+}
+
+.simulation {
+  background: #c13e3e;
+}
+
+.useImg {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  margin: 25px auto 10px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  padding: 10px;
+  background: #99DDFA;
+}
+
+img {
+  background-size: cover;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+}
+
+.imgText {
+  color: #fff;
+}
+
+.icon {
+  font-size: 22px;
+  color: #C2081F;
+}
+
+.weui_label {
+  width: 35px;
+}
+
+.page-bd-15 {
+  padding: 20px 15px;
+}
+
+.weui_cell {
+  padding: 10px;
+}
+
+.weui_icon_waiting:before {
+  color: #C2081F;
+}
+.weui_btn_warn{
+  background-color: #C2081F;
+}
