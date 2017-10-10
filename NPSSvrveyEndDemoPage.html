@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="./echarts.js"></script>
+    <script type="text/javascript" src="./jquery-3.2.1.js"></script>
+    <script>
+        function changeSize() {
+            if (window.orientation === 90 || window.orientation === -90) {
+                $('#container').width(window.innerHeight);
+                $('#container').height(window.innerWidth);
+            } else {
+                $('#container').width(window.innerWidth);
+                $('#container').height(window.innerHeight);
+            }
+        }
+    </script>
+</head>
+
+<body style="height: 100%; margin: 0">
+    <div id="container" style="height: 650px; width: 410px"></div>
+    <script type="text/javascript">
+    changeSize();
+
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var app = {};
+    option = null;
+
+    option = {
+        baseOption: {
+            title: {
+                text: '市场活动有效性分析',
+                textStyle: {
+                    fontSize: 1,
+                }
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            legend: {
+                data: ['出席率', '准确率', '问卷回复率', '批评者跟进率', '新增潜在客户数', '实际参与人数']
+            },
+            grid: {
+                left: '3%',
+                right: '8%',
+                bottom: '3%',
+                top: '15%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'value',
+                boundaryGap: [0, 0.01]
+            },
+            yAxis: {
+                type: 'category',
+                data: ['百影争锋\n腹透论术', '膜力无限', '脓毒症', '陕西“乐透未\n来”护理会议', '透析临床\n科研培训', '荟百家\n聚精华']
+            },
+            series: [{
+                    name: '出席率',
+                    type: 'bar',
+                    data: [90, 95, 87, 88, 89, 50],
+                    itemStyle: {
+                        normal: {
+                            label: {
+                                show: true,
+                                position: 'right',
+                                textStyle: {
+                                    fontSize: 12
+                                },
+                                formatter: '{c}%'
+                            }
+                        }
+                    }
+                },
+                {
+                    name: '准确率',
+                    type: 'bar',
+                    data: [80, 90, 92, 90, 98, 60],
+                    itemStyle: {
+                        normal: {
+                            label: {
+                                show: true,
+                                position: 'right',
+                                textStyle: {
+                                    fontSize: 12
+                                },
+                                formatter: '{c}%'
+                            }
+                        }
+                    }
+                },
+                {
+                    name: '问卷回复率',
+                    type: 'bar',
+                    data: [80, 90, 90, 90, 80, 85],
+                    itemStyle: {
+                        normal: {
+                            label: {
+                                show: true,
+                                position: 'right',
+                                textStyle: {
+                                    fontSize: 12
+                                },
+                                formatter: '{c}%'
+                            }
+                        }
+                    }
+                },
+                {
+                    name: '批评者跟进率',
+                    type: 'bar',
+                    data: [80, 90, 90, 90, 88, 65],
+                    itemStyle: {
+                        normal: {
+                            label: {
+                                show: true,
+                                position: 'right',
+                                textStyle: {
+                                    fontSize: 12
+                                },
+                                formatter: '{c}%'
+                            }
+                        }
+                    }
+                },
+                {
+                    name: '新增潜在客户数',
+                    type: 'bar',
+                    data: [8, 9, 10, 11, 7, 5],
+                    itemStyle: {
+                        normal: {
+                            label: {
+                                show: true,
+                                position: 'right',
+                                textStyle: {
+                                    fontSize: 12
+                                },
+                                formatter: '{c}人'
+                            }
+                        }
+                    }
+                },
+                {
+                    name: '实际参与人数',
+                    type: 'bar',
+                    data: [80, 90, 90, 90, 8, 50],
+                    itemStyle: {
+                        normal: {
+                            label: {
+                                show: true,
+                                position: 'right',
+                                textStyle: {
+                                    fontSize: 12
+                                },
+                                formatter: '{c}人'
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        media: [
+            {
+                query: {
+                    minAspectRatio: 1
+                },
+                option: {
+                    title: {
+                        text: '市场活动>500有效性分析',
+                        textStyle: {
+                            fontSize: 20,
+                        }
+                    },
+                    legend: {
+                        right: 'center',
+                        bottom: 0,
+                        orient: 'horizontal'
+                    },
+                    series: [{
+                            radius: [20, '50%'],
+                            center: ['25%', '50%']
+                        },
+                        {
+                            radius: [30, '50%'],
+                            center: ['75%', '50%']
+                        }
+                    ]
+                }
+            },
+            {
+                query: {
+                    // maxWidth: 500,
+                    maxAspectRatio: 1
+                },
+                option: {
+                    title: {
+                        text: '市场活动<500有效性分析',
+                        textStyle: {
+                            fontSize: 40,
+                        }
+                    },
+                    legend: {
+                        // right: 10,
+                        top: '70',
+                        orient: 'horizontal',
+                        itemWidth: 50,
+                        itemHeight: 28,
+                        textStyle: {
+                            fontSize: 25
+                        }
+                    },
+                    series: [{
+                            radius: [20, '50%'],
+                            center: ['50%', '30%']
+                        },
+                        {
+                            radius: [30, '50%'],
+                            center: ['50%', '75%']
+                        }
+                    ]
+                }
+            }
+        ]
+    };
+
+
+
+    myChart.setOption(option);
+
+    if (option && typeof option === "object") {
+        myChart.setOption(option, true);
+    }
+    </script>
+
+</body>
+
+</html>
