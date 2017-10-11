@@ -1,40 +1,70 @@
-<!doctype html>
-<html>
-    <head>
-        <title>QRCode</title>
-        <script type="text/javascript" src="http://files.cnblogs.com/webers/qrcode-light.js"></script>
-        <script type="text/javascript" src="http://files.cnblogs.com/webers/qrgen.js"></script>
-    </head>
-    <body>
-        <div>
-            <h1>二维码生成</h1>
-            <div>
-                图片: <img id=qrimg src=http://hdimg.qiniudn.com/Uploads/141889425189.png>
-                <label><input id=qrclearedges type=checkbox checked>清理边缘</label>
-            </div>
-            <div><input id=fimg type=file></div>
-            <div>文本: <textarea id=qrtext>http://www.btgoogle.com</textarea></div>
-            <div>大小: <input id=cellSize type=range min=2 max=10 value=6></div>
-            <table>
-                <tr>
-                    <td rowspan=2>效果:</td>
-                    <td colspan=3><input id=cellEffect type=range min=-50 max=50 step=5 value=0></td>
-                </tr>
-                <tr id=cellEffectStops>
-                    <td align=left><a href=# data=l>液体</a></td>
-                    <td align=center><a href=# data=s>方块</a></td>
-                    <td align=right><a href=# data=r>圆</a></td>
-                </tr>
-            </table>
-            <div>
-                Foreground color: <input id=colorFore type=color value=#4169e1>
-                Background color: <input id=colorBack type=color value=#ffffff><br>
-                Outside-border color: <input id=colorOut type=color value=#cd5c5c>
-                Inside-border color: <input id=colorIn type=color value=#191970>
-            </div>
-            <button id=qrgen>生成</button>
-        </div>
-        <div id=qrcode></div>
-        <script src="http://files.cnblogs.com/webers/take.js"></script>
-    </body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>
+    <title>Zero Clipboard Test</title>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <!-- <script type="text/javascript" src="excanvas.compiled.js"></script> -->
+    <script type="text/javascript" src="jquery.qrcode.min.js"></script>
+    <script type="text/javascript"> 
+    function generateQRCode(rendermethod, picwidth, picheight, url) {
+
+        $("#qrcode").qrcode({ 
+            render: rendermethod, // 渲染方式有table方式（IE兼容）和canvas方式
+            width: picwidth, //宽度 
+            height:picheight, //高度 
+            text: utf16to8(url), //内容 
+            typeNumber:-1,//计算模式
+            correctLevel:2,//二维码纠错级别
+            background:"#ffffff",//背景颜色
+            foreground:"#000000"  //二维码颜色
+
+        });
+    }
+    function init() {
+        generateQRCode("table",200, 200, "测试");
+        var margin = ($("#qrcode").height()-$("#codeico").height())/2;
+        $("#codeico").css("margin",margin);
+    }
+    //中文编码格式转换
+    function utf16to8(str) {
+        var out, i, len, c;
+        out = "";
+        len = str.length;
+        for (i = 0; i < len; i++) {
+            c = str.charCodeAt(i);
+            if ((c >= 0x0001) && (c <= 0x007F)) {
+                out += str.charAt(i);
+            } else if (c > 0x07FF) {
+                out += String.fromCharCode(0xE0 | ((c >> 12) & 0x0F));
+                out += String.fromCharCode(0x80 | ((c >> 6) & 0x3F));
+                out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
+            } else {
+                out += String.fromCharCode(0xC0 | ((c >> 6) & 0x1F));
+                out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
+            }
+        }
+        return out;
+    }   
+
+    </script>
+
+    <style type="text/css">
+        #codeico{
+            position:fixed;//生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 "left", "top", "right" 以及 "bottom" 
+            z-index:9999999;
+            width:30px; 
+            height:30px;
+            background:url(./1_meitu_1.png) no-repeat;
+        }
+    </style>
+</head>
+<body onLoad="init()">
+    <h1>Qrcode</h1>
+    <div id="qrcode">
+        <div id="codeico"></div>
+    </div>
+
+</body>
 </html>
