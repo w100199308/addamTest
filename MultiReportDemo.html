@@ -289,15 +289,17 @@
         //return the Base64 encoded data url string
         // return imageData;
 
+        alert('navigator.userAgent===='+navigator.userAgent);
+        
         if ((navigator.userAgent.indexOf('MSIE') >= 0) 
             && (navigator.userAgent.indexOf('Opera') < 0)){
-            //alert('你是使用IE')
+            alert('你是使用IE');
             var allFileName = "会前问卷结果Demo.png";
             var canvas = document.getElementById('container').children[0].children[0];
             var blob = canvas.msToBlob();
             navigator.msSaveBlob(blob,allFileName);
         }else{
-            //alert('你是使用其他的浏览器浏览网页！')
+            alert('你是使用其他的浏览器浏览网页！');
             canvas = document.getElementById('container').children[0].children[0];
             var image = canvas.toDataURL("image/png"); 
             // var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"); 
