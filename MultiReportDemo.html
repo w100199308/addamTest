@@ -231,7 +231,8 @@ option = {
 function canvasToImage(backgroundColor)
 {
     var canvas = document.getElementById('container').children[0].children[0];
-    var dataUrl = canvas.getDataURL({type: 'png'});
+    var dataUrl = myChart.getDataURL();
+    // var dataUrl = canvas.getDataURL({type: 'png'});
     var filename = "chart_download_picture";
 
     var MIME_TYPE = "image/png";
