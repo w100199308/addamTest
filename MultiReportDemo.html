@@ -230,7 +230,8 @@ option = {
 //background color
 function canvasToImage(backgroundColor)
 {
-    var dataUrl = $('#container').getDataURL({type: 'png'});
+    var canvas = document.getElementById('container');
+    var dataUrl = canvas.getDataURL({type: 'png'});
     var filename = "chart_download_picture";
 
     var MIME_TYPE = "image/png";
