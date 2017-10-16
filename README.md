@@ -16,3 +16,7 @@ TSC AR导入相关界面Demo
 [NPS市场活动问卷结果导出图表](http://w100199308.github.io/addamTest/NPSSvrveyEndDemoPage.html)
 </br>
 </br>
+
+[Echarts多图表展示下载demo](http://w100199308.github.io/addamTest/MultiReportDemo.html)
+</br>
+</br>
