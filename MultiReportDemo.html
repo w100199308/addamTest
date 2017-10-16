@@ -289,22 +289,33 @@
         //return the Base64 encoded data url string
         // return imageData;
 
-        alert('navigator.userAgent===='+navigator.userAgent);
-        
-        if ((navigator.userAgent.indexOf('MSIE') >= 0) 
-            && (navigator.userAgent.indexOf('Opera') < 0)){
-            alert('你是使用IE');
+
+
+
+
+        if (IETester()){
+            //alert('你是使用IE')
             var allFileName = "会前问卷结果Demo.png";
             var canvas = document.getElementById('container').children[0].children[0];
             var blob = canvas.msToBlob();
             navigator.msSaveBlob(blob,allFileName);
         }else{
-            alert('你是使用其他的浏览器浏览网页！');
+            //alert('你是使用其他的浏览器浏览网页！')
             canvas = document.getElementById('container').children[0].children[0];
             var image = canvas.toDataURL("image/png"); 
             // var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"); 
             window.location.href=image; // it will save locally 
         }
+    }
+
+    function IETester(){
+        var UA =  navigator.userAgent;
+        if(/msie/i.test(UA)){
+            return UA.match(/msie (\d+\.\d+)/i)[1];
+        }else if(~UA.toLowerCase().indexOf('trident') && ~UA.indexOf('rv')){
+            return UA.match(/rv:(\d+\.\d+)/)[1];
+        }
+        return false;
     }
     </script>
 </body>
