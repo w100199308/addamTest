@@ -18,8 +18,9 @@
 
         function getIeImagin() {
 //             if(isIE()){
-                var allFileName = filename + ".png";
-                var canvas = document.getElementById(chartId).children[0].children[0];
+//                 var allFileName = filename + ".png";
+                var allFileName = "会前问卷结果Demo.png";
+                var canvas = document.getElementById('container').children[0].children[0];
                 var blob = canvas.msToBlob();
                 navigator.msSaveBlob(blob,allFileName);
                 return;
