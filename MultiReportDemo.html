@@ -230,6 +230,21 @@ option = {
 //background color
 function canvasToImage(backgroundColor)
 {
+    var dataUrl = $('#container').getDataURL({type: 'png'});
+    var filename = "chart_download_picture";
+
+    var MIME_TYPE = "image/png";
+    var aTage = document.createElement('a');
+    aTag.href = dataUrl;
+    aTag.download = filename + ".png";
+    document.body.appendChild(aTag);
+    aTag.click();
+    document.body.removeChild(aTage);
+    return;
+
+
+
+
 
     var canvas = document.getElementById('container').children[0].children[0];
     var context = canvas.getContext("2d");
