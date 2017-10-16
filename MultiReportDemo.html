@@ -15,10 +15,21 @@
 //                 $('#container').height(window.innerHeight);
             }
         }
+
+        function getIeImagin() {
+            if(isIE()){
+                var allFileName = filename + ".png";
+                var canvas = document.getElementById(chartId).children[0].children[0];
+                var blob = canvas.msToBlob();
+                navigator.msSaveBlob(blob,allFileName);
+                return;
+            }
+        }
     </script>
 </head>
 
 <body style="margin: 0">
+    <div onclick="getIeImagin();">我的下载</div>
     <div id="container" style="height: 1000px; width: 900px;"></div>
     <script type="text/javascript">
     changeSize();
@@ -193,7 +204,7 @@ option = {
             saveAsImage:{
                 show: true,
                 title: '保存',
-                pixelRatio: 3
+                pixelRatio: 10
             }
         }
     }
