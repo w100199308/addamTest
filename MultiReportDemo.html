@@ -5,6 +5,13 @@
     <meta charset="utf-8">
     <script type="text/javascript" src="./echarts.js"></script>
     <script type="text/javascript" src="./jquery-3.2.1.js"></script>
+
+    <style type="text/css">
+        canvas {
+            background-color: #ffffff; 
+        }
+    </style>
+
     <script>
         function changeSize() {
             if (window.orientation === 90 || window.orientation === -90) {
@@ -218,19 +225,52 @@ option = {
     }
     </script>
 <script>
-var divContent = document.getElementById("container").innerHTML;
-var data = "data:image/svg+xml," +
-"<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'>" +
-"<foreignObject width='100%' height='100%'>" +
-"<div xmlns='http://www.w3.org/1999/xhtml' style='font-size:16px;font-family:Helvetica'>" +
-divContent +
-"</div>" +
-"</foreignObject>" +
-"</svg>";
-var img = new Image();
-img.src = data;
-document.getElementsByTagName('body')[0].appendChild(img);
+//Returns contents of a canvas as a png based data url, with the specified
+//background color
+function canvasToImage(backgroundColor)
+{
+    //cache height and width        
+    var w = canvas.width;
+    var h = canvas.height;
+
+    var data;       
+
+    if(backgroundColor)
+    {
+        //get the current ImageData for the canvas.
+        data = context.getImageData(0, 0, w, h);
+
+        //store the current globalCompositeOperation
+        var compositeOperation = context.globalCompositeOperation;
+
+        //set to draw behind current content
+        context.globalCompositeOperation = "destination-over";
+
+        //set background color
+        context.fillStyle = backgroundColor;
+
+        //draw background / rect on entire canvas
+        context.fillRect(0,0,w,h);
+    }
+
+    //get the image data from the canvas
+    var imageData = this.canvas.toDataURL("image/png");
+
+    if(backgroundColor)
+    {
+        //clear the canvas
+        context.clearRect (0,0,w,h);
+
+        //restore it with original / cached ImageData
+        context.putImageData(data, 0,0);        
+
+        //reset the globalCompositeOperation to what it was
+        context.globalCompositeOperation = compositeOperation;
+    }
+
+    //return the Base64 encoded data url string
+    return imageData;
+}
 </script>
 </body>
-
 </html>
