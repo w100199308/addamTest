@@ -302,8 +302,8 @@
         }else{
             //alert('你是使用其他的浏览器浏览网页！')
             canvas = document.getElementById('container').children[0].children[0];
-            var image = canvas.toDataURL("image/png"); 
-            // var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"); 
+            // var image = canvas.toDataURL("image/png"); 
+            var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"); 
             window.location.href=image; // it will save locally 
         }
     }
