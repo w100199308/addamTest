@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="./echarts.js"></script>
+    <script type="text/javascript" src="./jquery-3.2.1.js"></script>
+    <script>
+        function changeSize() {
+            if (window.orientation === 90 || window.orientation === -90) {
+                $('#container').width(window.innerHeight);
+                $('#container').height(window.innerWidth);
+            } else {
+                $('#container').width(window.innerWidth);
+                $('#container').height(window.innerHeight);
+            }
+        }
+    </script>
+</head>
+
+<body style="height: 100%; margin: 0">
+    <div id="container" style="height: 650px; width: 410px"></div>
+    <script type="text/javascript">
+    changeSize();
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var app = {};
+    option = null;
+    var titles = [{
+        textAlign: 'center',
+        left: '25%',
+        top: '-1%',
+        text: '1.您如果在临床上较少或者没有开展过\n高通透析疗法，主要顾虑是什么？     （可多选）',
+        textStyle: {
+            fontSize: 12,
+            fontWeight: 'normal'
+        }
+    },{
+        textAlign: 'center',
+        left: '75%',
+        top: '0.5%',
+        text: '4.您是否知道或者使用过百特的Revaclear透析器',
+        textStyle: {
+            fontSize: 12,
+            fontWeight: 'normal'
+        }
+    },{
+        textAlign: 'center',
+        left: '25%',
+        top: '50.5%',
+        text: 'test3',
+        textStyle: {
+            fontSize: 12,
+            fontWeight: 'normal'
+        }
+    }];
+
+option = {
+    title: titles.concat([{
+        // text: 'Different Easing Functions',
+        // top: 'top',
+        // left: 'center'
+    }]),
+    grid: [{
+        show: true,
+        borderWidth: 0,
+        backgroundColor: '#fff',
+        shadowColor: 'rgba(0, 0, 0, 0.3)',
+        shadowBlur: 2,
+        left: '20%',
+        top: '6%',
+        width: '28%',
+        height: '39%'
+    },{
+        show: false,
+        borderWidth: 0,
+        backgroundColor: '#fff',
+        shadowColor: 'rgba(0, 0, 0, 0.3)',
+        shadowBlur: 2,
+        left: '50.5%',
+        top: '0.5%',
+        width: '49%',
+        height: '49%'
+    },{
+        show: true,
+        borderWidth: 0,
+        backgroundColor: '#fff',
+        shadowColor: 'rgba(0, 0, 0, 0.3)',
+        shadowBlur: 2,
+        left: '0.5%',
+        top: '50.5%',
+        width: '49%',
+        height: '49%'
+    }],
+    xAxis: [{
+        type: 'value',
+        gridIndex: 0
+    },{
+        type: 'value',
+        show: false,
+        min: 0,
+        max: 1,
+        gridIndex: 1
+    },{
+        type: 'value',
+        show: false,
+        min: 0,
+        max: 1,
+        gridIndex: 2
+    }],
+    yAxis: [{
+        type: 'category', 
+        position: 'bottom',
+        data: [
+        '疗效性与低通透析相\n比差异不大', 
+        '容易出现不适反应，\n如出现过敏，恶心等不良反应', 
+        '价格较高，增加治疗\n成本', 
+        '透析水质或其他硬件\n条件不够成熟', 
+        '医保政策不允许', 
+        '已开展，不存在以上\n因素'],
+        gridIndex: 0
+    },{
+        type: 'value',
+        show: false,
+        min: -0.4,
+        max: 1.4,
+        gridIndex: 1
+    },{
+        type: 'value',
+        show: false,
+        min: -0.4,
+        max: 1.4,
+        gridIndex: 2
+    }],
+    series: [{
+        name: '1.您如果在临床上较少或者没有开展过高通透析疗法，主要顾虑是什么？     （可多选）',
+        type: 'bar',
+        xAxisIndex: 0,
+        yAxisIndex: 0,
+        data: [1, 4, 24, 11, 18, 40],
+        barWidth: 20, 
+        itemStyle: { 
+            normal: { 
+                label: { 
+                    show: true, 
+                    position: "insideRight" 
+                } 
+            } 
+        }
+    },{
+        name: '4.您是否知道或者使用过百特的Revaclear透析器',
+        type: 'pie',
+        radius:'25%',
+        center:['75%','25%'],
+        label:{normal:{formatter:'{b}: \n{d}%'}},
+        data: [{
+            value:16,
+            name:'知道，也使用\n过',
+            percent:'22.86%'
+        },{
+            value:36,
+            name:'知道，但是\n没有使用过',
+            percent:'51.43%'
+        },{
+            value:18,
+            name:'不知道，也\n没有使用过',
+            percent:'25.71%'
+        }]
+    },{
+        name: 'test3',
+        type: 'line',
+        xAxisIndex: 2,
+        yAxisIndex: 2,
+        data: [[0, 1], [0.5, 2], [0.75, 5]],
+        showSymbol: false,
+        animationEasing: 'test3',
+        animationDuration: 1000
+    }],
+    toolbox: {
+        show: true,
+        feature:{
+            saveAsImage:{
+                show: true
+            }
+        }
+    }
+};
+
+    myChart.setOption(option);
+    if (option && typeof option === "object") {
+        myChart.setOption(option, true);
+    }
+    </script>
+
+</body>
+
+</html>
