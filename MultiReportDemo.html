@@ -5,13 +5,6 @@
     <meta charset="utf-8">
     <script type="text/javascript" src="./echarts.js"></script>
     <script type="text/javascript" src="./jquery-3.2.1.js"></script>
-
-    <style type="text/css">
-        canvas {
-            /*background-color: #ffffff; */
-        }
-    </style>
-
     <script>
         function changeSize() {
             if (window.orientation === 90 || window.orientation === -90) {
@@ -22,19 +15,13 @@
 //                 $('#container').height(window.innerHeight);
             }
         }
-
-        function getIeImagin() {
-//             if(isIE()){
-//                 var allFileName = filename + ".png";
-                
-//             }
-        }
     </script>
 </head>
 
 <body style="margin: 0">
-    <div onclick="getIeImagin();">我的下载</div>
-    <div onclick="canvasToImage('#ffffff');">我的变色</div>
+    <div style="float: right;">
+        <input type="button" onclick="canvasToImage('#ffffff');" value="Download" />
+    </div>
     <div id="container" style="height: 1000px; width: 900px;"></div>
     <script type="text/javascript">
     changeSize();
@@ -201,18 +188,7 @@
                     }
                 }
             }
-        }],
-        toolbox: {
-            show: true,
-            right: 30,
-            feature:{
-                saveAsImage:{
-                    show: true,
-                    title: '保存',
-                    pixelRatio: 10
-                }
-            }
-        }
+        }]
     };
 
     myChart.setOption(option);
@@ -225,24 +201,6 @@
     //background color
     function canvasToImage(backgroundColor)
     {
-        /*var canvas = document.getElementById('container').children[0].children[0];
-        var dataUrl = myChart.getDataURL();
-        // var dataUrl = canvas.getDataURL({type: 'png'});
-        var filename = "chart_download_picture";
-
-        var MIME_TYPE = "image/png";
-        var aTag = document.createElement('a');
-        aTag.href = dataUrl;
-        aTag.download = filename + ".png";
-        document.body.appendChild(aTag);
-        aTag.click();
-        document.body.removeChild(aTage);
-        return;*/
-
-
-
-
-
         var canvas = document.getElementById('container').children[0].children[0];
         var context = canvas.getContext("2d");
 
@@ -250,48 +208,10 @@
         var w = canvas.width;
         var h = canvas.height;
 
-        var data;       
-
-        if(backgroundColor)
-        {
-            //get the current ImageData for the canvas.
-            data = context.getImageData(0, 0, w, h);
-
-            //store the current globalCompositeOperation
-            var compositeOperation = context.globalCompositeOperation;
-
-            //set to draw behind current content
-            context.globalCompositeOperation = "destination-over";
-
-            //set background color
-            // context.fillStyle = backgroundColor;
-            context.fillStyle = "#ffffff";
-
-            //draw background / rect on entire canvas
-            context.fillRect(0,0,w,h);
-        }
-
-        //get the image data from the canvas
-        var imageData = canvas.toDataURL("image/png");
-
-        // if(backgroundColor)
-        // {
-        //     //clear the canvas
-        //     context.clearRect (0,0,w,h);
-
-        //     //restore it with original / cached ImageData
-        //     context.putImageData(data, 0,0);        
-
-        //     //reset the globalCompositeOperation to what it was
-        //     context.globalCompositeOperation = compositeOperation;
-        // }
-
-        //return the Base64 encoded data url string
-        // return imageData;
-
-
-
-
+        var compositeOperation = context.globalCompositeOperation;
+        context.globalCompositeOperation = "destination-over";
+        context.fillStyle = "#ffffff";
+        context.fillRect(0,0,w,h);
 
         if (IETester()){
             //alert('你是使用IE')
