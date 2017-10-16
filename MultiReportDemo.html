@@ -26,11 +26,7 @@
         function getIeImagin() {
 //             if(isIE()){
 //                 var allFileName = filename + ".png";
-                var allFileName = "会前问卷结果Demo.png";
-                var canvas = document.getElementById('container').children[0].children[0];
-                var blob = canvas.msToBlob();
-                navigator.msSaveBlob(blob,allFileName);
-                return;
+                
 //             }
         }
     </script>
@@ -39,7 +35,7 @@
 <body style="margin: 0">
     <div onclick="getIeImagin();">我的下载</div>
     <div onclick="canvasToImage('#ffffff');">我的变色</div>
-    <div id="container" style="height: 1000px; width: 900px; background: #ffffff;"></div>
+    <div id="container" style="height: 1000px; width: 900px;"></div>
     <script type="text/javascript">
     changeSize();
     var dom = document.getElementById("container");
@@ -75,231 +71,239 @@
         }
     }];
 
-option = {
-    title: titles.concat([{
-        text: '回迁调查问卷',
-        top: 'top',
-        left: 'center'
-    }]),
-    grid: [{
-        show: true,
-        borderWidth: 0,
-        backgroundColor: '#fff',
-        shadowColor: 'rgba(0, 0, 0, 0.3)',
-        shadowBlur: 2,
-        left: '20%',
-        top: '60',
-        width: '28%',
-        height: '250'
-    },{
-        show: false,
-        borderWidth: 0,
-        backgroundColor: '#fff',
-        shadowColor: 'rgba(0, 0, 0, 0.3)',
-        shadowBlur: 2,
-        left: '50.5%',
-        top: '0.5%',
-        width: '49%',
-        height: '250'
-    },{
-        show: true,
-        borderWidth: 0,
-        backgroundColor: '#fff',
-        shadowColor: 'rgba(0, 0, 0, 0.3)',
-        shadowBlur: 2,
-        left: '20%',
-        top: '375',
-        width: '28%',
-        height: '250'
-    }],
-    xAxis: [{
-        type: 'value',
-        gridIndex: 0
-    },{
-        type: 'value',
-        show: false,
-        min: 0,
-        max: 1,
-        gridIndex: 1
-    },{
-        type: 'value',
-        name: '',
-        gridIndex: 2
-    }],
-    yAxis: [{
-        type: 'category', 
-        position: 'bottom',
-        data: [
-        '疗效性与低通透析相\n比差异不大', 
-        '容易出现不适反应，\n如出现过敏，恶心等不良反应', 
-        '价格较高，增加治疗\n成本', 
-        '透析水质或其他硬件\n条件不够成熟', 
-        '医保政策不允许', 
-        '已开展，不存在以上\n因素'],
-        gridIndex: 0
-    },{
-        type: 'value',
-        show: false,
-        min: -0.4,
-        max: 1.4,
-        gridIndex: 1
-    },{
-        type: 'category',
-        data: ['1. 超滤系数',
-               '2. 小分子清除率',
-               '3. 中大分子清除的\n临床效果',
-               '4. 筛选系数',
-               '5. 膜面积',
-               '6. 白蛋白丢失率',
-               '7.文献介绍的临床疗\n效指标',
-               '8.灭菌方式',
-               '9.最大跨膜压'],
-        gridIndex: 2
-    }],
-    series: [{
-        name: '1.您如果在临床上较少或者没有开展过高通透析疗法，主要顾虑是什么？     （可多选）',
-        type: 'bar',
-        xAxisIndex: 0,
-        yAxisIndex: 0,
-        data: [1, 4, 24, 11, 18, 40],
-        barWidth: 20, 
-        itemStyle: { 
-            normal: { 
-                label: { 
-                    show: true, 
-                    position: "insideRight" 
+    option = {
+        title: titles.concat([{
+            text: '回迁调查问卷',
+            top: 'top',
+            left: 'center'
+        }]),
+        grid: [{
+            show: true,
+            borderWidth: 0,
+            backgroundColor: '#fff',
+            shadowColor: 'rgba(0, 0, 0, 0.3)',
+            shadowBlur: 2,
+            left: '20%',
+            top: '60',
+            width: '28%',
+            height: '250'
+        },{
+            show: false,
+            borderWidth: 0,
+            backgroundColor: '#fff',
+            shadowColor: 'rgba(0, 0, 0, 0.3)',
+            shadowBlur: 2,
+            left: '50.5%',
+            top: '0.5%',
+            width: '49%',
+            height: '250'
+        },{
+            show: true,
+            borderWidth: 0,
+            backgroundColor: '#fff',
+            shadowColor: 'rgba(0, 0, 0, 0.3)',
+            shadowBlur: 2,
+            left: '20%',
+            top: '375',
+            width: '28%',
+            height: '250'
+        }],
+        xAxis: [{
+            type: 'value',
+            gridIndex: 0
+        },{
+            type: 'value',
+            show: false,
+            min: 0,
+            max: 1,
+            gridIndex: 1
+        },{
+            type: 'value',
+            name: '',
+            gridIndex: 2
+        }],
+        yAxis: [{
+            type: 'category', 
+            position: 'bottom',
+            data: [
+            '疗效性与低通透析相\n比差异不大', 
+            '容易出现不适反应，\n如出现过敏，恶心等不良反应', 
+            '价格较高，增加治疗\n成本', 
+            '透析水质或其他硬件\n条件不够成熟', 
+            '医保政策不允许', 
+            '已开展，不存在以上\n因素'],
+            gridIndex: 0
+        },{
+            type: 'value',
+            show: false,
+            min: -0.4,
+            max: 1.4,
+            gridIndex: 1
+        },{
+            type: 'category',
+            data: ['1. 超滤系数',
+                   '2. 小分子清除率',
+                   '3. 中大分子清除的\n临床效果',
+                   '4. 筛选系数',
+                   '5. 膜面积',
+                   '6. 白蛋白丢失率',
+                   '7.文献介绍的临床疗\n效指标',
+                   '8.灭菌方式',
+                   '9.最大跨膜压'],
+            gridIndex: 2
+        }],
+        series: [{
+            name: '1.您如果在临床上较少或者没有开展过高通透析疗法，主要顾虑是什么？     （可多选）',
+            type: 'bar',
+            xAxisIndex: 0,
+            yAxisIndex: 0,
+            data: [1, 4, 24, 11, 18, 40],
+            barWidth: 20, 
+            itemStyle: { 
+                normal: { 
+                    label: { 
+                        show: true, 
+                        position: "insideRight" 
+                    } 
                 } 
-            } 
-        }
-    },{
-        name: '2.您是否知道或者使用过百特的Revaclear透析器',
-        type: 'pie',
-        radius:'25%',
-        center:['75%','185'],
-        label:{normal:{formatter:'{b}: \n{d}%'}},
-        data: [{
-            value:16,
-            name:'知道，也使用\n过',
-            percent:'22.86%'
+            }
         },{
-            value:36,
-            name:'知道，但是\n没有使用过',
-            percent:'51.43%'
+            name: '2.您是否知道或者使用过百特的Revaclear透析器',
+            type: 'pie',
+            radius:'25%',
+            center:['75%','185'],
+            label:{normal:{formatter:'{b}: \n{d}%'}},
+            data: [{
+                value:16,
+                name:'知道，也使用\n过',
+                percent:'22.86%'
+            },{
+                value:36,
+                name:'知道，但是\n没有使用过',
+                percent:'51.43%'
+            },{
+                value:18,
+                name:'不知道，也\n没有使用过',
+                percent:'25.71%'
+            }]
         },{
-            value:18,
-            name:'不知道，也\n没有使用过',
-            percent:'25.71%'
-        }]
-    },{
-        name: '3.您评判高通透析器性能好坏时，最优先考虑的三个指标是以下哪些？',
-        type: 'bar',
-        data: [1,11,5,10,16,26,1,8,3],
-        barWidth: 20,
-        xAxisIndex: 2,
-        yAxisIndex: 2,
-        itemStyle: {
-            normal: {
-                label:{
+            name: '3.您评判高通透析器性能好坏时，最优先考虑的三个指标是以下哪些？',
+            type: 'bar',
+            data: [1,11,5,10,16,26,1,8,3],
+            barWidth: 20,
+            xAxisIndex: 2,
+            yAxisIndex: 2,
+            itemStyle: {
+                normal: {
+                    label:{
+                        show: true,
+                        position: 'insideRight'
+                    }
+                }
+            }
+        }],
+        toolbox: {
+            show: true,
+            right: 30,
+            feature:{
+                saveAsImage:{
                     show: true,
-                    position: 'insideRight'
+                    title: '保存',
+                    pixelRatio: 10
                 }
             }
         }
-    }],
-    toolbox: {
-        show: true,
-        right: 30,
-        feature:{
-            saveAsImage:{
-                show: true,
-                title: '保存',
-                pixelRatio: 10
-            }
-        }
-    },
-    backgroundColor: '#ffff00'
-};
+    };
 
     myChart.setOption(option);
     if (option && typeof option === "object") {
         myChart.setOption(option, true);
     }
     </script>
-<script>
-//Returns contents of a canvas as a png based data url, with the specified
-//background color
-function canvasToImage(backgroundColor)
-{
-    /*var canvas = document.getElementById('container').children[0].children[0];
-    var dataUrl = myChart.getDataURL();
-    // var dataUrl = canvas.getDataURL({type: 'png'});
-    var filename = "chart_download_picture";
-
-    var MIME_TYPE = "image/png";
-    var aTag = document.createElement('a');
-    aTag.href = dataUrl;
-    aTag.download = filename + ".png";
-    document.body.appendChild(aTag);
-    aTag.click();
-    document.body.removeChild(aTage);
-    return;*/
-
-
-
-
-
-    var canvas = document.getElementById('container').children[0].children[0];
-    var context = canvas.getContext("2d");
-
-    //cache height and width        
-    var w = canvas.width;
-    var h = canvas.height;
-
-    var data;       
-
-    if(backgroundColor)
+    <script>
+    //Returns contents of a canvas as a png based data url, with the specified
+    //background color
+    function canvasToImage(backgroundColor)
     {
-        //get the current ImageData for the canvas.
-        data = context.getImageData(0, 0, w, h);
+        /*var canvas = document.getElementById('container').children[0].children[0];
+        var dataUrl = myChart.getDataURL();
+        // var dataUrl = canvas.getDataURL({type: 'png'});
+        var filename = "chart_download_picture";
 
-        //store the current globalCompositeOperation
-        var compositeOperation = context.globalCompositeOperation;
+        var MIME_TYPE = "image/png";
+        var aTag = document.createElement('a');
+        aTag.href = dataUrl;
+        aTag.download = filename + ".png";
+        document.body.appendChild(aTag);
+        aTag.click();
+        document.body.removeChild(aTage);
+        return;*/
 
-        //set to draw behind current content
-        context.globalCompositeOperation = "destination-over";
 
-        //set background color
-        // context.fillStyle = backgroundColor;
-        context.fillStyle = "#ffffff";
 
-        //draw background / rect on entire canvas
-        context.fillRect(0,0,w,h);
-        alert('qqq');
+
+
+        var canvas = document.getElementById('container').children[0].children[0];
+        var context = canvas.getContext("2d");
+
+        //cache height and width        
+        var w = canvas.width;
+        var h = canvas.height;
+
+        var data;       
+
+        if(backgroundColor)
+        {
+            //get the current ImageData for the canvas.
+            data = context.getImageData(0, 0, w, h);
+
+            //store the current globalCompositeOperation
+            var compositeOperation = context.globalCompositeOperation;
+
+            //set to draw behind current content
+            context.globalCompositeOperation = "destination-over";
+
+            //set background color
+            // context.fillStyle = backgroundColor;
+            context.fillStyle = "#ffffff";
+
+            //draw background / rect on entire canvas
+            context.fillRect(0,0,w,h);
+        }
+
+        //get the image data from the canvas
+        var imageData = canvas.toDataURL("image/png");
+
+        // if(backgroundColor)
+        // {
+        //     //clear the canvas
+        //     context.clearRect (0,0,w,h);
+
+        //     //restore it with original / cached ImageData
+        //     context.putImageData(data, 0,0);        
+
+        //     //reset the globalCompositeOperation to what it was
+        //     context.globalCompositeOperation = compositeOperation;
+        // }
+
+        //return the Base64 encoded data url string
+        // return imageData;
+
+        if ((navigator.userAgent.indexOf('MSIE') >= 0) 
+            && (navigator.userAgent.indexOf('Opera') < 0)){
+            //alert('你是使用IE')
+            var allFileName = "会前问卷结果Demo.png";
+            var canvas = document.getElementById('container').children[0].children[0];
+            var blob = canvas.msToBlob();
+            navigator.msSaveBlob(blob,allFileName);
+        }else{
+            //alert('你是使用其他的浏览器浏览网页！')
+            canvas = document.getElementById('container').children[0].children[0];
+            var image = canvas.toDataURL("image/png"); 
+            // var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"); 
+            window.location.href=image; // it will save locally 
+        }
     }
-
-    //get the image data from the canvas
-    var imageData = canvas.toDataURL("image/png");
-
-    // if(backgroundColor)
-    // {
-    //     //clear the canvas
-    //     context.clearRect (0,0,w,h);
-
-    //     //restore it with original / cached ImageData
-    //     context.putImageData(data, 0,0);        
-
-    //     //reset the globalCompositeOperation to what it was
-    //     context.globalCompositeOperation = compositeOperation;
-    // }
-
-    //return the Base64 encoded data url string
-    // return imageData;
-
-    canvas = document.getElementById('container').children[0].children[0];
-    var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"); 
-    window.location.href=image; // it will save locally 
-
-}
-</script>
+    </script>
 </body>
 </html>
