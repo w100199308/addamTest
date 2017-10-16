@@ -29,7 +29,7 @@
     var titles = [{
         textAlign: 'center',
         left: '25%',
-        top: '-1%',
+        top: '25',
         text: '1.您如果在临床上较少或者没有开展过\n高通透析疗法，主要顾虑是什么？     （可多选）',
         textStyle: {
             fontSize: 12,
@@ -38,7 +38,7 @@
     },{
         textAlign: 'center',
         left: '75%',
-        top: '0.5%',
+        top: '25',
         text: '4.您是否知道或者使用过百特的Revaclear透析器',
         textStyle: {
             fontSize: 12,
@@ -47,7 +47,7 @@
     },{
         textAlign: 'center',
         left: '25%',
-        top: '50.5%',
+        top: '340',
         text: 'test3',
         textStyle: {
             fontSize: 12,
@@ -57,9 +57,9 @@
 
 option = {
     title: titles.concat([{
-        // text: 'Different Easing Functions',
-        // top: 'top',
-        // left: 'center'
+        text: 'Different Easing Functions',
+        top: 'top',
+        left: 'center'
     }]),
     grid: [{
         show: true,
@@ -68,9 +68,9 @@ option = {
         shadowColor: 'rgba(0, 0, 0, 0.3)',
         shadowBlur: 2,
         left: '20%',
-        top: '6%',
+        top: '60',
         width: '28%',
-        height: '39%'
+        height: '250'
     },{
         show: false,
         borderWidth: 0,
@@ -80,7 +80,7 @@ option = {
         left: '50.5%',
         top: '0.5%',
         width: '49%',
-        height: '49%'
+        height: '250'
     },{
         show: true,
         borderWidth: 0,
@@ -88,9 +88,9 @@ option = {
         shadowColor: 'rgba(0, 0, 0, 0.3)',
         shadowBlur: 2,
         left: '0.5%',
-        top: '50.5%',
+        top: '375',
         width: '49%',
-        height: '49%'
+        height: '250'
     }],
     xAxis: [{
         type: 'value',
@@ -151,21 +151,21 @@ option = {
         name: '4.您是否知道或者使用过百特的Revaclear透析器',
         type: 'pie',
         radius:'25%',
-        center:['75%','25%'],
+        center:['75%','185'],
         label:{normal:{formatter:'{b}: \n{d}%'}},
         data: [{
             value:16,
-            name:'知道，也使用\n过',
-            percent:'22.86%'
+    		name:'知道，也使用\n过',
+    		percent:'22.86%'
         },{
-            value:36,
-            name:'知道，但是\n没有使用过',
-            percent:'51.43%'
-        },{
-            value:18,
-            name:'不知道，也\n没有使用过',
-            percent:'25.71%'
-        }]
+    		value:36,
+    		name:'知道，但是\n没有使用过',
+    		percent:'51.43%'
+    	},{
+    		value:18,
+    		name:'不知道，也\n没有使用过',
+    		percent:'25.71%'
+    	}]
     },{
         name: 'test3',
         type: 'line',
