@@ -159,17 +159,17 @@ option = {
         label:{normal:{formatter:'{b}: \n{d}%'}},
         data: [{
             value:16,
-    		name:'知道，也使用\n过',
-    		percent:'22.86%'
+            name:'知道，也使用\n过',
+            percent:'22.86%'
         },{
-    		value:36,
-    		name:'知道，但是\n没有使用过',
-    		percent:'51.43%'
-    	},{
-    		value:18,
-    		name:'不知道，也\n没有使用过',
-    		percent:'25.71%'
-    	}]
+            value:36,
+            name:'知道，但是\n没有使用过',
+            percent:'51.43%'
+        },{
+            value:18,
+            name:'不知道，也\n没有使用过',
+            percent:'25.71%'
+        }]
     },{
         name: '3.您评判高通透析器性能好坏时，最优先考虑的三个指标是以下哪些？',
         type: 'bar',
@@ -188,9 +188,11 @@ option = {
     }],
     toolbox: {
         show: true,
+        right: 30,
         feature:{
             saveAsImage:{
-                show: true
+                show: true,
+                pixelRatio: 10
             }
         }
     }
