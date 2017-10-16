@@ -6,22 +6,22 @@
     <script type="text/javascript" src="./echarts.js"></script>
     <script type="text/javascript" src="./jquery-3.2.1.js"></script>
     <script>
-//         function changeSize() {
-//             if (window.orientation === 90 || window.orientation === -90) {
-//                 $('#container').width(window.innerHeight);
+        function changeSize() {
+            if (window.orientation === 90 || window.orientation === -90) {
+                $('#container').width(window.innerHeight);
 //                 $('#container').height(window.innerWidth);
-//             } else {
-//                 $('#container').width(window.innerWidth);
+            } else {
+                $('#container').width(window.innerWidth);
 //                 $('#container').height(window.innerHeight);
-//             }
-//         }
+            }
+        }
     </script>
 </head>
 
 <body style="height: 100%; margin: 0">
     <div id="container" style="height: 1000px; width: 900px;"></div>
     <script type="text/javascript">
-//     changeSize();
+    changeSize();
     var dom = document.getElementById("container");
     var myChart = echarts.init(dom);
     var app = {};
