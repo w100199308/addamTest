@@ -230,7 +230,7 @@ option = {
 //background color
 function canvasToImage(backgroundColor)
 {
-    var canvas = document.getElementById('container').children[0].children[0];
+    /*var canvas = document.getElementById('container').children[0].children[0];
     var dataUrl = myChart.getDataURL();
     // var dataUrl = canvas.getDataURL({type: 'png'});
     var filename = "chart_download_picture";
@@ -242,7 +242,7 @@ function canvasToImage(backgroundColor)
     document.body.appendChild(aTag);
     aTag.click();
     document.body.removeChild(aTage);
-    return;
+    return;*/
 
 
 
@@ -269,7 +269,8 @@ function canvasToImage(backgroundColor)
         context.globalCompositeOperation = "destination-over";
 
         //set background color
-        context.fillStyle = backgroundColor;
+        // context.fillStyle = backgroundColor;
+        context.fillStyle = "#ffffff";
 
         //draw background / rect on entire canvas
         context.fillRect(0,0,w,h);
@@ -279,22 +280,22 @@ function canvasToImage(backgroundColor)
     //get the image data from the canvas
     var imageData = canvas.toDataURL("image/png");
 
-    if(backgroundColor)
-    {
-        //clear the canvas
-        context.clearRect (0,0,w,h);
+    // if(backgroundColor)
+    // {
+    //     //clear the canvas
+    //     context.clearRect (0,0,w,h);
 
-        //restore it with original / cached ImageData
-        context.putImageData(data, 0,0);        
+    //     //restore it with original / cached ImageData
+    //     context.putImageData(data, 0,0);        
 
-        //reset the globalCompositeOperation to what it was
-        context.globalCompositeOperation = compositeOperation;
-    }
+    //     //reset the globalCompositeOperation to what it was
+    //     context.globalCompositeOperation = compositeOperation;
+    // }
 
     //return the Base64 encoded data url string
     // return imageData;
 
-
+    canvas = document.getElementById('container').children[0].children[0];
     var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"); 
     window.location.href=image; // it will save locally 
 
