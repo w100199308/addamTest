@@ -39,7 +39,7 @@
         textAlign: 'center',
         left: '75%',
         top: '25',
-        text: '4.您是否知道或者使用过百特的Revaclear透析器',
+        text: '2.您是否知道或者使用过百特的Revaclear透析器',
         textStyle: {
             fontSize: 12,
             fontWeight: 'normal'
@@ -48,7 +48,7 @@
         textAlign: 'center',
         left: '25%',
         top: '340',
-        text: 'test3',
+        text: '3.您评判高通透析器性能好坏时，最优先考虑的三个指标是以下哪些？',
         textStyle: {
             fontSize: 12,
             fontWeight: 'normal'
@@ -57,7 +57,7 @@
 
 option = {
     title: titles.concat([{
-        text: 'Different Easing Functions',
+        text: '回迁调查问卷',
         top: 'top',
         left: 'center'
     }]),
@@ -103,10 +103,7 @@ option = {
         gridIndex: 1
     },{
         type: 'value',
-        show: false,
-        min: 0,
-        max: 1,
-        gridIndex: 2
+        name: ''
     }],
     yAxis: [{
         type: 'category', 
@@ -126,11 +123,16 @@ option = {
         max: 1.4,
         gridIndex: 1
     },{
-        type: 'value',
-        show: false,
-        min: -0.4,
-        max: 1.4,
-        gridIndex: 2
+        type: 'category',
+        data: ['1. 超滤系数',
+               '2. 小分子清除率',
+               '3. 中大分子清除的临床效果',
+               '4. 筛选系数',
+               '5. 膜面积',
+               '6. 白蛋白丢失率',
+               '7.文献介绍的临床疗效指标',
+               '8.灭菌方式',
+               '9.最大跨膜压']
     }],
     series: [{
         name: '1.您如果在临床上较少或者没有开展过高通透析疗法，主要顾虑是什么？     （可多选）',
@@ -148,7 +150,7 @@ option = {
             } 
         }
     },{
-        name: '4.您是否知道或者使用过百特的Revaclear透析器',
+        name: '2.您是否知道或者使用过百特的Revaclear透析器',
         type: 'pie',
         radius:'25%',
         center:['75%','185'],
@@ -167,14 +169,18 @@ option = {
     		percent:'25.71%'
     	}]
     },{
-        name: 'test3',
-        type: 'line',
-        xAxisIndex: 2,
-        yAxisIndex: 2,
-        data: [[0, 1], [0.5, 2], [0.75, 5]],
-        showSymbol: false,
-        animationEasing: 'test3',
-        animationDuration: 1000
+        name: '3.您评判高通透析器性能好坏时，最优先考虑的三个指标是以下哪些？',
+        type: 'bar',
+        data: [1,11,5,10,16,26,1,8,3],
+        barWidth: 20,
+        itemStyle: {
+            normal: {
+                label:{
+                    show: true,
+                    position: 'insideRight'
+                }
+            }
+        }
     }],
     toolbox: {
         show: true,
