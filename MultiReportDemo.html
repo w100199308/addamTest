@@ -8,7 +8,7 @@
 
     <style type="text/css">
         canvas {
-            background-color: #ffffff; 
+            /*background-color: #ffffff; */
         }
     </style>
 
@@ -38,6 +38,7 @@
 
 <body style="margin: 0">
     <div onclick="getIeImagin();">我的下载</div>
+    <div onclick="canvasToImage('#ffffff');">我的变色</div>
     <div id="container" style="height: 1000px; width: 900px; background: #ffffff;"></div>
     <script type="text/javascript">
     changeSize();
@@ -229,6 +230,10 @@ option = {
 //background color
 function canvasToImage(backgroundColor)
 {
+
+    var canvas = document.getElementById('container').children[0].children[0];
+    var context = canvas.getContext("2d");
+
     //cache height and width        
     var w = canvas.width;
     var h = canvas.height;
@@ -254,7 +259,7 @@ function canvasToImage(backgroundColor)
     }
 
     //get the image data from the canvas
-    var imageData = this.canvas.toDataURL("image/png");
+    var imageData = canvas.toDataURL("image/png");
 
     if(backgroundColor)
     {
@@ -269,7 +274,12 @@ function canvasToImage(backgroundColor)
     }
 
     //return the Base64 encoded data url string
-    return imageData;
+    // return imageData;
+
+
+    var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"); 
+    window.location.href=image; // it will save locally 
+
 }
 </script>
 </body>
