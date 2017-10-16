@@ -132,7 +132,8 @@ option = {
                '6. 白蛋白丢失率',
                '7.文献介绍的临床疗效指标',
                '8.灭菌方式',
-               '9.最大跨膜压']
+               '9.最大跨膜压'],
+        gridIndex: 2
     }],
     series: [{
         name: '1.您如果在临床上较少或者没有开展过高通透析疗法，主要顾虑是什么？     （可多选）',
@@ -173,6 +174,8 @@ option = {
         type: 'bar',
         data: [1,11,5,10,16,26,1,8,3],
         barWidth: 20,
+        xAxisIndex: 2,
+        yAxisIndex: 2,
         itemStyle: {
             normal: {
                 label:{
