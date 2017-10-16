@@ -236,7 +236,7 @@ function canvasToImage(backgroundColor)
     var filename = "chart_download_picture";
 
     var MIME_TYPE = "image/png";
-    var aTage = document.createElement('a');
+    var aTag = document.createElement('a');
     aTag.href = dataUrl;
     aTag.download = filename + ".png";
     document.body.appendChild(aTag);
