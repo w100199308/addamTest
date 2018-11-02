@@ -180,7 +180,7 @@
 
     <!-- 三个月NPS得分与回复率变化 -->
     <div class="panel">
-        <h1 style="font-Size: 5rem">近三月NPS得分与回复率</h1>
+        <!-- <h1 style="font-Size: 5rem">近三月NPS得分与回复率</h1> -->
         <table>
             <tr>
                 <td colspan="2" style="text-align:center;">
@@ -195,32 +195,64 @@
     <script type="text/javascript">
         var myChart = echarts.init(document.getElementById('npsReport'));
         option = {
-            grid: {
-                top: '17%',
-                height: '60%%',
-                weight: '50%'
+            color: ['#4cabce', '#006699', '#4cabce', '#e5323e'],
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
             },
             legend: {
-                data:['NPS得分','回复率']
+                data: ['业务机会创建数', '拜访创建数']
             },
-            xAxis: {
-                type: 'category',
-                data: ['5月', '6月', '7月', '8月']
+            toolbox: {
+                show: true,
+                orient: 'vertical',
+                left: 'right',
+                top: 'center',
+                feature: {
+                    mark: {show: true},
+                    dataView: {show: true, readOnly: false},
+                    magicType: {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+                    restore: {show: true},
+                    saveAsImage: {show: true}
+                }
             },
-            yAxis: {
-                type: 'value',
-                splitNumber: 1,
-            },
-            series: [{
-                name: 'NPS得分',
-                type: 'line',
-                data: [70, 60, 50, 90]
-            },
-            {
-                name: '回复率',
-                type: 'line',
-                data: [90, 70, 80, 87]
-            }]
+            xAxis: [
+                {
+                    type: 'value'
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'category',
+                    axisTick: {show: false},
+                    data: ['8月', '9月', '10月']
+                }
+            ],
+            series: [
+                {
+                    name: '业务机会创建数',
+                    type: 'bar',
+                    label:{
+                        show: true,
+                        formatter:'业务机会创建数：{c}',
+                        position:'inside' 
+                    },
+                    barGap: 0,
+                    data: [320, 332, 350]
+                },
+                {
+                    name: '拜访创建数',
+                    type: 'bar',
+                    label:{
+                        show: true,
+                        formatter:'拜访创建数：{c}',
+                        position:'inside' 
+                    },
+                    data: [220, 182, 210]
+                }
+            ]
         };
         myChart.setOption(option);
     </script>
