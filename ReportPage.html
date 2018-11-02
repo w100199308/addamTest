@@ -178,7 +178,7 @@
         $('#loading').hide();
     </script>
 
-    <div id="npsReport" style="margin:0 auto; height: 30%; width: 100%; ">
+    <div id="npsReport" style="margin:0 auto; height: 200px; width: 100%; ">
     </div>
 
     <!-- NPS3月走势图 -->
@@ -194,19 +194,6 @@
             },
             legend: {
                 data: ['业务机会创建数', '拜访创建数']
-            },
-            toolbox: {
-                show: true,
-                orient: 'vertical',
-                left: 'right',
-                top: 'center',
-                feature: {
-                    mark: {show: true},
-                    dataView: {show: true, readOnly: false},
-                    magicType: {show: true, type: ['line', 'bar', 'stack', 'tiled']},
-                    restore: {show: true},
-                    saveAsImage: {show: true}
-                }
             },
             xAxis: [
                 {
