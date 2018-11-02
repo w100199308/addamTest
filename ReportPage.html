@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width" />
+
+    <title>NPS微信仪表盘Demo</title>
+
+    <style type="text/css">
+        .spinner {
+          margin: 100px auto;
+          width: 50px;
+          height: 40px;
+          text-align: center;
+          font-size: 10px;
+        }
+
+        .spinner > div {
+          background-color: #333;
+          height: 100%;
+          width: 6px;
+          display: inline-block;
+
+          -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+          animation: sk-stretchdelay 1.2s infinite ease-in-out;
+        }
+
+        .spinner .rect2 {
+          -webkit-animation-delay: -1.1s;
+          animation-delay: -1.1s;
+        }
+
+        .spinner .rect3 {
+          -webkit-animation-delay: -1.0s;
+          animation-delay: -1.0s;
+        }
+
+        .spinner .rect4 {
+          -webkit-animation-delay: -0.9s;
+          animation-delay: -0.9s;
+        }
+
+        .spinner .rect5 {
+          -webkit-animation-delay: -0.8s;
+          animation-delay: -0.8s;
+        }
+
+        @-webkit-keyframes sk-stretchdelay {
+          0%, 40%, 100% { -webkit-transform: scaleY(0.4) }
+          20% { -webkit-transform: scaleY(1.0) }
+        }
+
+        @keyframes sk-stretchdelay {
+          0%, 40%, 100% {
+            transform: scaleY(0.4);
+            -webkit-transform: scaleY(0.4);
+          }  20% {
+            transform: scaleY(1.0);
+            -webkit-transform: scaleY(1.0);
+          }
+        }
+    </style>
+
+    <script type="text/javascript">
+    (function() {
+        document.addEventListener('DOMContentLoaded', function() {
+            var html = document.documentElement;
+            var windowWidth = html.clientWidth;
+            html.style.fontSize = windowWidth / 100 + 'px';
+        }, false);
+    })();
+
+    screen.orientation.addEventListener("change", function(e) {
+        window.location.reload();
+    }, false);
+
+    </script>
+</head>
+
+<body>
+    <div id="loading" class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
+
+    <script type="text/javascript" src="./echarts.min.js"></script>
+    <script type="text/javascript" src="./jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./css/default.css">
+    <link rel="stylesheet" href="./css/bootstrap-table-expandable.css">
+    <script src="./js/bootstrap-table-expandable.js"></script>
+
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            /*height: 100%;*/
+            margin: 0;
+            background: #E0EAF6;
+        }
+
+        h1 {
+            padding-left: 1rem;
+            margin-top: 1rem;
+        }
+
+        canvas {
+            display: none;
+            display: block;
+            margin: 0 auto;
+        }
+
+        table {
+            width : 100%;
+        }
+
+        .panel {
+            background: #ffffff;
+            margin: 0 auto;
+            width: 95%;
+            margin-bottom: 10px;
+        }
+
+        .panel2 {
+            float: left;
+            margin-left: 2.5%;
+            width: 46.25%;
+        }
+
+        /*活动留言样式*/
+        .ds-post-main {
+            position: relative;
+            width: 95%;
+            margin-left: 0.5rem;
+            margin-bottom: 5px;
+        }
+
+        .ds-avatar {
+            position: absolute;
+            padding: 2px;
+            background: #3f3f3f;
+            border-radius: 50%;
+        }
+
+        .ds-avatar {
+            display: block;
+            width: 2rem;
+            height: 2rem;
+            background: #01cc01;
+            border-radius: 50%;
+        }
+
+        .ds-comment-body {
+            margin-left: 1rem;
+            padding: 0.75rem 0.75rem 0.75rem 2rem ;
+            background: #F0F0E3;
+            font-size: 3.3rem;
+        }
+
+        .user-name {
+            font-size: 3.7rem;
+            font-weight: bold;
+            color: #DE4C1C;
+            margin-bottom: 5px;
+        }
+
+        .campaign-name {
+            align: right;
+            font-size: 3rem;
+        }
+    </style>
+
+    <script>
+        $('#loading').hide();
+    </script>
+
+    <!-- 三个月NPS得分与回复率变化 -->
+    <div class="panel">
+        <h1 style="font-Size: 5rem">近三月NPS得分与回复率</h1>
+        <table>
+            <tr>
+                <td colspan="2" style="text-align:center;">
+                    <div id="npsReport" style="margin:0 auto; height: 150px; width: 100%; ">
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- NPS3月走势图 -->
+    <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('npsReport'));
+        option = {
+            grid: {
+                top: '17%',
+                height: '60%%',
+                weight: '50%'
+            },
+            legend: {
+                data:['NPS得分','回复率']
+            },
+            xAxis: {
+                type: 'category',
+                data: ['5月', '6月', '7月', '8月']
+            },
+            yAxis: {
+                type: 'value',
+                splitNumber: 1,
+            },
+            series: [{
+                name: 'NPS得分',
+                type: 'line',
+                data: [70, 60, 50, 90]
+            },
+            {
+                name: '回复率',
+                type: 'line',
+                data: [90, 70, 80, 87]
+            }]
+        };
+        myChart.setOption(option);
+    </script>
+
+    <!-- 控制页面大小 -->
+    <script>
+        var html = document.documentElement;
+        $('#div111').width($('#div222').width());
+        $('#div111').height(html.clientWidth / 4 - 6.4);
+    </script>
+</body>
+
+</html>
